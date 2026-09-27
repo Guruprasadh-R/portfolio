@@ -6,21 +6,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-4 sm:px-6 md:px-10 border-t border-white/[0.08] relative bg-[#09090b]">
+    <footer className="py-12 px-4 sm:px-6 md:px-10 border-t border-amber-500/15 relative bg-[#090807]/90 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left: Monogram and Editorial Info */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-full bg-[#f59e0b] text-[#09090b] font-bold text-xs flex items-center justify-center font-mono">
+            <div className="w-6 h-6 rounded-full bg-[#f59e0b] text-[#090807] font-bold text-xs flex items-center justify-center font-mono shadow-[0_0_10px_rgba(245,158,11,0.4)]">
               G
             </div>
             <span className="text-sm font-semibold text-white tracking-tight">
               Guruprasadh R
             </span>
           </div>
-          <span className="hidden sm:inline-block text-[#52525b]">&bull;</span>
-          <span className="text-xs text-[#71717a] font-mono">
-            Anna University &bull; Chennai, IN (IST UTC+5:30)
+          <span className="hidden sm:inline-block text-[#57534e]">&bull;</span>
+          <span className="text-xs text-[#a8a29e] font-mono">
+            Anna University &bull; Chennai, IN (IST UTC+5:30) &bull; Edge Station
           </span>
         </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
             href="https://github.com/Guruprasadh-R"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-[#a1a1aa] hover:text-white transition-colors"
+            className="font-mono text-xs text-[#d6d3d1] hover:text-white transition-colors"
           >
             GitHub
           </a>
@@ -38,20 +38,20 @@ export default function Footer() {
             href="https://www.linkedin.com/in/guruprasadh-raghavan-a6a8b434a"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-[#a1a1aa] hover:text-white transition-colors"
+            className="font-mono text-xs text-[#d6d3d1] hover:text-white transition-colors"
           >
             LinkedIn
           </a>
           <a
             href="mailto:guruprasadh.raghavan@gmail.com"
-            className="font-mono text-xs text-[#a1a1aa] hover:text-white transition-colors"
+            className="font-mono text-xs text-[#d6d3d1] hover:text-white transition-colors"
           >
             Email
           </a>
 
           <button
             onClick={scrollToTop}
-            className="glass-pill px-3 py-1.5 rounded-full font-mono text-[11px] text-[#a1a1aa] hover:text-white flex items-center gap-1.5 transition-colors tactile-btn"
+            className="glass-pill px-3 py-1.5 rounded-full font-mono text-[11px] text-[#fed7aa] hover:text-white flex items-center gap-1.5 transition-colors tactile-btn border-amber-500/20"
             aria-label="Scroll back to top"
           >
             <span>Top</span>

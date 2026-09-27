@@ -8,9 +8,9 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Monospace Header */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#f59e0b]" />
-          <span className="font-mono text-xs text-[#a1a1aa] tracking-widest uppercase">
-            // 01. Foundations & Philosophy
+          <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+          <span className="font-mono text-xs text-[#fed7aa] tracking-widest uppercase">
+            // 01. Foundations &amp; Philosophy
           </span>
         </div>
 
@@ -20,10 +20,12 @@ export default function About() {
           <div className="lg:col-span-7 flex flex-col gap-6">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.15]">
               Engineering high-throughput web applications with{" "}
-              <span className="text-[#f59e0b]">low-level systems discipline.</span>
+              <span className="text-[#f59e0b] drop-shadow-[0_0_25px_rgba(245,158,11,0.3)]">
+                low-level systems discipline.
+              </span>
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-[#a1a1aa] leading-relaxed max-w-[65ch]">
+            <div className="space-y-4 text-sm sm:text-base text-[#d6d3d1] leading-relaxed max-w-[65ch]">
               <p>
                 I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Anna University based in Chennai, India. My work spans the continuum between distributed web systems and operating system internals.
               </p>
@@ -38,19 +40,19 @@ export default function About() {
             {/* Micro Telemetry Row */}
             <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/[0.08]">
               <div>
-                <div className="font-mono text-[11px] text-[#71717a] uppercase tracking-wider">Education</div>
+                <div className="font-mono text-[11px] text-[#a8a29e] uppercase tracking-wider">Education</div>
                 <div className="text-sm font-medium text-white mt-1">Anna University</div>
-                <div className="font-mono text-xs text-[#a1a1aa]">B.Tech in CS</div>
+                <div className="font-mono text-xs text-[#fed7aa]/80">B.Tech in CS</div>
               </div>
               <div>
-                <div className="font-mono text-[11px] text-[#71717a] uppercase tracking-wider">Base</div>
+                <div className="font-mono text-[11px] text-[#a8a29e] uppercase tracking-wider">Base</div>
                 <div className="text-sm font-medium text-white mt-1">Chennai, India</div>
-                <div className="font-mono text-xs text-[#a1a1aa]">UTC+05:30 (IST)</div>
+                <div className="font-mono text-xs text-[#fed7aa]/80">UTC+05:30 (IST)</div>
               </div>
               <div className="col-span-2 sm:col-span-1">
-                <div className="font-mono text-[11px] text-[#71717a] uppercase tracking-wider">Open Source</div>
+                <div className="font-mono text-[11px] text-[#a8a29e] uppercase tracking-wider">Open Source</div>
                 <div className="text-sm font-medium text-white mt-1">Celtrix OS</div>
-                <div className="font-mono text-xs text-[#a1a1aa]">Co-maintainer</div>
+                <div className="font-mono text-xs text-[#f59e0b]">Co-maintainer</div>
               </div>
             </div>
           </div>
@@ -61,7 +63,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="glass-panel p-6 rounded-2xl border border-white/[0.08] relative overflow-hidden group"
+              className="glass-panel p-6 rounded-3xl border-amber-500/15 relative overflow-hidden group"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-[11px] text-[#f59e0b] tracking-wider uppercase flex items-center gap-1.5">
@@ -71,20 +73,20 @@ export default function About() {
                   </svg>
                   Academic Rigor
                 </span>
-                <span className="font-mono text-[10px] text-[#71717a] px-2 py-0.5 rounded bg-white/[0.04]">
+                <span className="font-mono text-[10px] text-[#fed7aa] px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
                   UNDERGRADUATE
                 </span>
               </div>
               <h3 className="text-base font-semibold text-white mb-1">
                 Computer Science &amp; Engineering
               </h3>
-              <p className="text-xs text-[#a1a1aa] leading-relaxed mb-4">
+              <p className="text-xs text-[#d6d3d1] leading-relaxed mb-4">
                 Curriculum centered on computational complexity, concurrent operating systems, distributed database architecture, and compiler construction.
               </p>
-              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-[#d4d4d8]">
-                <span className="px-2 py-1 rounded bg-white/[0.05] border border-white/[0.05]">Operating Systems</span>
-                <span className="px-2 py-1 rounded bg-white/[0.05] border border-white/[0.05]">Data Structures</span>
-                <span className="px-2 py-1 rounded bg-white/[0.05] border border-white/[0.05]">Algorithms</span>
+              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-[#fed7aa]">
+                <span className="px-2 py-1 rounded bg-white/[0.04] border border-amber-500/15">Operating Systems</span>
+                <span className="px-2 py-1 rounded bg-white/[0.04] border border-amber-500/15">Data Structures</span>
+                <span className="px-2 py-1 rounded bg-white/[0.04] border border-amber-500/15">Algorithms</span>
               </div>
             </motion.div>
 
@@ -92,7 +94,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="glass-panel p-6 rounded-2xl border border-white/[0.08] relative overflow-hidden group"
+              className="glass-panel p-6 rounded-3xl border-amber-500/15 relative overflow-hidden group"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-[11px] text-emerald-400 tracking-wider uppercase flex items-center gap-1.5">
@@ -111,7 +113,7 @@ export default function About() {
               <h3 className="text-base font-semibold text-white mb-1">
                 Celtrix Operating System
               </h3>
-              <p className="text-xs text-[#a1a1aa] leading-relaxed mb-4">
+              <p className="text-xs text-[#d6d3d1] leading-relaxed mb-4">
                 Direct contributor and co-maintainer driving core architecture reviews, kernel utility implementations in C, and developer onboarding workflows.
               </p>
               <a
@@ -128,19 +130,19 @@ export default function About() {
             </motion.div>
 
             {/* Card 3: Execution Values / Principles */}
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.05] flex items-center justify-between">
+            <div className="p-5 rounded-2xl bg-[rgba(18,15,13,0.6)] border border-amber-500/15 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#f59e0b]/10 text-[#f59e0b] flex items-center justify-center font-mono text-xs">
+                <div className="w-8 h-8 rounded-lg bg-[#f59e0b]/15 text-[#f59e0b] flex items-center justify-center font-mono text-xs shadow-[0_0_12px_rgba(245,158,11,0.25)]">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-xs font-medium text-white">Full Cycle Ownership</div>
-                  <div className="text-[11px] text-[#71717a]">Architecture &bull; API &bull; UI &bull; Deployment</div>
+                  <div className="text-[11px] text-[#a8a29e]">Architecture &bull; Low-Level C &bull; Web UIs &bull; Deployment</div>
                 </div>
               </div>
-              <span className="font-mono text-[10px] text-[#a1a1aa] bg-white/[0.04] px-2 py-1 rounded">
+              <span className="font-mono text-[10px] text-[#fed7aa] bg-amber-500/10 border border-amber-500/20 px-2 py-1 rounded">
                 100% PROD-READY
               </span>
             </div>
