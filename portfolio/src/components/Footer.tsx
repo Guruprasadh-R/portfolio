@@ -6,12 +6,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-4 sm:px-6 md:px-10 border-t border-amber-500/15 relative bg-[#090807]/90 backdrop-blur-xl">
+    <footer className="py-12 px-4 sm:px-6 md:px-10 border-t border-white/10 relative bg-black/20 backdrop-blur-md">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left: Monogram and Editorial Info */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-full bg-[#f59e0b] text-[#090807] font-bold text-xs flex items-center justify-center font-mono shadow-[0_0_10px_rgba(245,158,11,0.4)]">
+            <div className="w-6 h-6 rounded-full bg-[#cf966b] text-[#0b0d10] font-bold text-xs flex items-center justify-center font-mono shadow-[0_0_10px_rgba(207,150,107,0.4)]">
               G
             </div>
             <span className="text-sm font-semibold text-white tracking-tight">
@@ -19,7 +19,7 @@ export default function Footer() {
             </span>
           </div>
           <span className="hidden sm:inline-block text-[#57534e]">&bull;</span>
-          <span className="text-xs text-[#a8a29e] font-mono">
+          <span className="text-xs text-[#9ca3af] font-mono">
             Anna University &bull; Chennai, IN (IST UTC+5:30) &bull; Edge Station
           </span>
         </div>
@@ -30,7 +30,7 @@ export default function Footer() {
             href="https://github.com/Guruprasadh-R"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-[#d6d3d1] hover:text-white transition-colors"
+            className="font-mono text-xs text-[#d6d3d1] hover:text-[#cf966b] transition-colors"
           >
             GitHub
           </a>
@@ -38,20 +38,20 @@ export default function Footer() {
             href="https://www.linkedin.com/in/guruprasadh-raghavan-a6a8b434a"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-[#d6d3d1] hover:text-white transition-colors"
+            className="font-mono text-xs text-[#d6d3d1] hover:text-[#cf966b] transition-colors"
           >
             LinkedIn
           </a>
           <a
             href="mailto:guruprasadh.raghavan@gmail.com"
-            className="font-mono text-xs text-[#d6d3d1] hover:text-white transition-colors"
+            className="font-mono text-xs text-[#d6d3d1] hover:text-[#cf966b] transition-colors"
           >
             Email
           </a>
 
           <button
             onClick={scrollToTop}
-            className="glass-pill px-3 py-1.5 rounded-full font-mono text-[11px] text-[#fed7aa] hover:text-white flex items-center gap-1.5 transition-colors tactile-btn border-amber-500/20"
+            className="glass-pill px-3 py-1.5 rounded-full font-mono text-[11px] text-[#f5cfb3] hover:text-white flex items-center gap-1.5 transition-colors tactile-btn border-white/10"
             aria-label="Scroll back to top"
           >
             <span>Top</span>

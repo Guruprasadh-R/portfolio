@@ -76,8 +76,8 @@ export default function Skills() {
       <div className="max-w-7xl mx-auto">
         {/* Section Monospace Header */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
-          <span className="font-mono text-xs text-[#fed7aa] tracking-widest uppercase">
+          <span className="w-2 h-2 rounded-full bg-[#cf966b] shadow-[0_0_8px_rgba(207,150,107,0.6)]" />
+          <span className="font-mono text-xs text-[#f5cfb3] tracking-widest uppercase">
             // 03. Technical Stack &amp; Capabilities
           </span>
         </div>
@@ -85,17 +85,17 @@ export default function Skills() {
         {/* Section Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
-              Architectural <span className="text-[#f59e0b] drop-shadow-[0_0_25px_rgba(245,158,11,0.3)]">competencies.</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+              Architectural <span className="text-[#cf966b]">competencies.</span>
             </h2>
             <p className="text-sm sm:text-base text-[#d6d3d1] mt-2 max-w-xl">
               From hardware-adjacent systems routines in C to modern declarative frontend architecture.
             </p>
           </div>
 
-          <div className="font-mono text-xs text-[#a8a29e] flex items-center gap-2">
+          <div className="font-mono text-xs text-[#9ca3af] flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-400" />
-            <span className="text-[#fed7aa]">Stack updated: Q3 2026</span>
+            <span className="text-[#f5cfb3]">Stack updated: Q3 2026</span>
           </div>
         </div>
 
@@ -111,16 +111,16 @@ export default function Skills() {
                   onClick={() => setActiveLayer(layer.id)}
                   className={`w-full text-left p-4 sm:p-5 rounded-2xl transition-all duration-200 border tactile-btn flex flex-col gap-1.5 ${
                     isActive
-                      ? "bg-[rgba(245,158,11,0.12)] border-[#f59e0b]/50 shadow-[0_0_30px_rgba(245,158,11,0.12)]"
-                      : "bg-[#090807]/70 border-white/[0.06] hover:bg-white/[0.04] hover:border-amber-500/20"
+                      ? "bg-[#cf966b]/15 border-[#cf966b]/60 shadow-[0_0_25px_rgba(207,150,107,0.15)]"
+                      : "bg-black/30 border-white/10 hover:bg-white/[0.05] hover:border-white/20"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <span className={`font-mono text-xs ${isActive ? "text-[#f59e0b] font-medium" : "text-[#a8a29e]"}`}>
+                    <span className={`font-mono text-xs ${isActive ? "text-[#cf966b] font-medium" : "text-[#9ca3af]"}`}>
                       {layer.category.split(" / ")[0]}
                     </span>
                     {isActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] animate-pulse" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#cf966b] animate-pulse" />
                     )}
                   </div>
                   <div className={`text-sm sm:text-base font-semibold ${isActive ? "text-white" : "text-[#d6d3d1]"}`}>
@@ -132,13 +132,13 @@ export default function Skills() {
           </div>
 
           {/* Active Layer Deep Dive (8 cols) */}
-          <div className="lg:col-span-8 glass-panel p-6 sm:p-8 rounded-3xl border-amber-500/15">
-            <div className="border-b border-white/[0.08] pb-6 mb-6">
+          <div className="lg:col-span-8 glass-panel p-6 sm:p-8 rounded-3xl">
+            <div className="border-b border-white/10 pb-6 mb-6">
               <div className="flex items-center justify-between gap-4 mb-2">
                 <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                   {selected.category.split(" / ")[1]}
                 </h3>
-                <span className="font-mono text-xs text-[#f59e0b] bg-[#f59e0b]/15 border border-[#f59e0b]/25 px-2.5 py-1 rounded-md">
+                <span className="font-mono text-xs text-[#cf966b] bg-[#cf966b]/15 border border-[#cf966b]/30 px-2.5 py-1 rounded-md">
                   {selected.items.length} TECHNOLOGIES
                 </span>
               </div>
@@ -148,17 +148,17 @@ export default function Skills() {
             </div>
 
             {/* Structured Table / Item Grid */}
-            <div className="divide-y divide-white/[0.06]">
+            <div className="divide-y divide-white/10">
               {selected.items.map((item, idx) => (
                 <motion.div
                   key={item.name}
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: idx * 0.04, duration: 0.3 }}
-                  className="py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/[0.03] px-2 rounded-lg transition-colors"
+                  className="py-3.5 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-white/[0.04] px-2 rounded-lg transition-colors"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-[#fed7aa]/60 w-5">
+                    <span className="font-mono text-xs text-[#f5cfb3]/60 w-5">
                       0{idx + 1}
                     </span>
                     <div>
@@ -166,14 +166,14 @@ export default function Skills() {
                         {item.name}
                       </span>
                       <span className="hidden sm:inline-block mx-2 text-[#57534e]">&bull;</span>
-                      <span className="text-xs text-[#a8a29e] block sm:inline">
+                      <span className="text-xs text-[#d6d3d1] block sm:inline">
                         {item.context}
                       </span>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-2 self-start sm:self-auto font-mono text-[11px]">
-                    <span className="px-2 py-0.5 rounded bg-amber-500/10 text-[#fed7aa] border border-amber-500/20">
+                    <span className="px-2 py-0.5 rounded bg-black/30 text-[#f5cfb3] border border-white/10">
                       {item.level}
                     </span>
                   </div>
@@ -182,9 +182,9 @@ export default function Skills() {
             </div>
 
             {/* Bottom Architecture Note */}
-            <div className="mt-8 pt-4 border-t border-white/[0.06] flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#a8a29e] font-mono gap-2">
+            <div className="mt-8 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-[#9ca3af] font-mono gap-2">
               <span>Stack philosophy: Low latency, zero bloat, high leverage</span>
-              <span className="text-[#fed7aa]">Strictly tested &amp; benchmarked</span>
+              <span className="text-[#f5cfb3]">Strictly tested &amp; benchmarked</span>
             </div>
           </div>
         </div>

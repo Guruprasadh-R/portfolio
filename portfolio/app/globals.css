@@ -2,17 +2,29 @@
 
 @layer base {
   :root {
-    --bg: #090807;
-    --bg-card: rgba(18, 15, 13, 0.72);
-    --bg-elevated: rgba(28, 24, 20, 0.8);
-    --text: #fafaf9;
+    /* Palette sampled directly from the video */
+    --sky-twilight: #14181d;
+    --sky-deep: #0b0d10;
+    --cloud-gold: #cf966b;
+    --cloud-gold-hover: #d89e71;
+    --cloud-glow: #f5cfb3;
+    --cloud-amber-dark: #8a5736;
+    --cliff-moss: #3a4838;
+    --laptop-cyan: #93c5fd;
+
+    /* Semantic UI tokens */
+    --text-primary: #fcfbf9;
     --text-secondary: #d6d3d1;
-    --text-muted: #a8a29e;
-    --accent: #f59e0b;
-    --accent-glow: #fbbf24;
-    --accent-amber: #d97706;
-    --border: rgba(255, 237, 213, 0.08);
-    --border-strong: rgba(245, 158, 11, 0.22);
+    --text-muted: #9ca3af;
+    --accent: #cf966b;
+    --accent-hover: #d89e71;
+    
+    /* Sheer Glass & Border Tokens */
+    --panel-bg: rgba(14, 18, 24, 0.38);
+    --panel-bg-hover: rgba(18, 22, 30, 0.52);
+    --pill-bg: rgba(18, 22, 28, 0.45);
+    --border-subtle: rgba(255, 237, 213, 0.1);
+    --border-hover: rgba(207, 150, 107, 0.4);
   }
 }
 
@@ -23,12 +35,12 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
-  background-color: var(--bg);
+  background-color: var(--sky-deep);
 }
 
 body {
   background-color: transparent;
-  color: var(--text);
+  color: var(--text-primary);
   font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -37,33 +49,37 @@ body {
 }
 
 ::selection {
-  background-color: rgba(245, 158, 11, 0.35);
+  background-color: rgba(207, 150, 107, 0.35);
   color: #fff7ed;
 }
 
-/* Atmospheric Warm Glass Panels */
+/* Atmospheric Sheer Glass Panels - Lets video breathe through */
 .glass-panel {
-  background: rgba(14, 12, 10, 0.72);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 237, 213, 0.09);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+  background: var(--panel-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 20px 40px -15px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .glass-panel:hover {
-  border-color: rgba(245, 158, 11, 0.22);
+  background: var(--panel-bg-hover);
+  border-color: var(--border-hover);
+  box-shadow: inset 0 1px 0 rgba(255, 237, 213, 0.15), 0 24px 50px -10px rgba(0, 0, 0, 0.7);
 }
 
 .glass-pill {
-  background: rgba(20, 17, 14, 0.76);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 237, 213, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: var(--pill-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
 .glass-pill:hover {
-  border-color: rgba(245, 158, 11, 0.35);
+  border-color: var(--border-hover);
 }
 
 /* Tactile Micro-Physics Feedback */
@@ -83,6 +99,6 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: 999;
-  opacity: 0.032;
+  opacity: 0.028;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }

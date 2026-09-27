@@ -8,8 +8,8 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         {/* Section Monospace Header */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
-          <span className="font-mono text-xs text-[#fed7aa] tracking-widest uppercase">
+          <span className="w-2 h-2 rounded-full bg-[#cf966b] shadow-[0_0_8px_rgba(207,150,107,0.6)]" />
+          <span className="font-mono text-xs text-[#f5cfb3] tracking-widest uppercase">
             // 01. Foundations &amp; Philosophy
           </span>
         </div>
@@ -18,14 +18,14 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
           {/* Left Column: Narrative Statement */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.15] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               Engineering high-throughput web applications with{" "}
-              <span className="text-[#f59e0b] drop-shadow-[0_0_25px_rgba(245,158,11,0.3)]">
+              <span className="text-[#cf966b]">
                 low-level systems discipline.
               </span>
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-[#d6d3d1] leading-relaxed max-w-[65ch]">
+            <div className="space-y-4 text-sm sm:text-base text-[#d6d3d1] leading-relaxed max-w-[65ch] drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
               <p>
                 I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Anna University based in Chennai, India. My work spans the continuum between distributed web systems and operating system internals.
               </p>
@@ -38,42 +38,42 @@ export default function About() {
             </div>
 
             {/* Micro Telemetry Row */}
-            <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/[0.08]">
+            <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/10">
               <div>
-                <div className="font-mono text-[11px] text-[#a8a29e] uppercase tracking-wider">Education</div>
+                <div className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider">Education</div>
                 <div className="text-sm font-medium text-white mt-1">Anna University</div>
-                <div className="font-mono text-xs text-[#fed7aa]/80">B.Tech in CS</div>
+                <div className="font-mono text-xs text-[#f5cfb3]/80">B.Tech in CS</div>
               </div>
               <div>
-                <div className="font-mono text-[11px] text-[#a8a29e] uppercase tracking-wider">Base</div>
+                <div className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider">Base</div>
                 <div className="text-sm font-medium text-white mt-1">Chennai, India</div>
-                <div className="font-mono text-xs text-[#fed7aa]/80">UTC+05:30 (IST)</div>
+                <div className="font-mono text-xs text-[#f5cfb3]/80">UTC+05:30 (IST)</div>
               </div>
               <div className="col-span-2 sm:col-span-1">
-                <div className="font-mono text-[11px] text-[#a8a29e] uppercase tracking-wider">Open Source</div>
+                <div className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider">Open Source</div>
                 <div className="text-sm font-medium text-white mt-1">Celtrix OS</div>
-                <div className="font-mono text-xs text-[#f59e0b]">Co-maintainer</div>
+                <div className="font-mono text-xs text-[#cf966b]">Co-maintainer</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Asymmetric Bento Engineering Telemetry */}
+          {/* Right Column: Asymmetric Sheer Bento Cards */}
           <div className="lg:col-span-5 flex flex-col gap-4">
             {/* Card 1: Academic & Systems Foundation */}
             <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="glass-panel p-6 rounded-3xl border-amber-500/15 relative overflow-hidden group"
+              className="glass-panel p-6 rounded-3xl relative overflow-hidden group"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-[11px] text-[#f59e0b] tracking-wider uppercase flex items-center gap-1.5">
+                <span className="font-mono text-[11px] text-[#cf966b] tracking-wider uppercase flex items-center gap-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
                     <path d="M6 12v5c3 3 9 3 12 0v-5" />
                   </svg>
                   Academic Rigor
                 </span>
-                <span className="font-mono text-[10px] text-[#fed7aa] px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">
+                <span className="font-mono text-[10px] text-[#f5cfb3] px-2 py-0.5 rounded bg-white/[0.05] border border-white/10">
                   UNDERGRADUATE
                 </span>
               </div>
@@ -83,10 +83,10 @@ export default function About() {
               <p className="text-xs text-[#d6d3d1] leading-relaxed mb-4">
                 Curriculum centered on computational complexity, concurrent operating systems, distributed database architecture, and compiler construction.
               </p>
-              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-[#fed7aa]">
-                <span className="px-2 py-1 rounded bg-white/[0.04] border border-amber-500/15">Operating Systems</span>
-                <span className="px-2 py-1 rounded bg-white/[0.04] border border-amber-500/15">Data Structures</span>
-                <span className="px-2 py-1 rounded bg-white/[0.04] border border-amber-500/15">Algorithms</span>
+              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-[#f5cfb3]">
+                <span className="px-2 py-1 rounded bg-black/30 border border-white/10">Operating Systems</span>
+                <span className="px-2 py-1 rounded bg-black/30 border border-white/10">Data Structures</span>
+                <span className="px-2 py-1 rounded bg-black/30 border border-white/10">Algorithms</span>
               </div>
             </motion.div>
 
@@ -94,7 +94,7 @@ export default function About() {
             <motion.div
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="glass-panel p-6 rounded-3xl border-amber-500/15 relative overflow-hidden group"
+              className="glass-panel p-6 rounded-3xl relative overflow-hidden group"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="font-mono text-[11px] text-emerald-400 tracking-wider uppercase flex items-center gap-1.5">
@@ -106,7 +106,7 @@ export default function About() {
                   </svg>
                   Active Stewardship
                 </span>
-                <span className="font-mono text-[10px] text-emerald-400/90 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">
+                <span className="font-mono text-[10px] text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">
                   MAINTAINER
                 </span>
               </div>
@@ -120,7 +120,7 @@ export default function About() {
                 href="https://github.com/celtrix-os/Celtrix"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs text-[#f59e0b] hover:text-[#fbbf24] transition-colors group-hover:translate-x-0.5"
+                className="inline-flex items-center gap-1.5 font-mono text-xs text-[#cf966b] hover:text-[#d89e71] transition-colors group-hover:translate-x-0.5"
               >
                 <span>github.com/celtrix-os/Celtrix</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -130,19 +130,19 @@ export default function About() {
             </motion.div>
 
             {/* Card 3: Execution Values / Principles */}
-            <div className="p-5 rounded-2xl bg-[rgba(18,15,13,0.6)] border border-amber-500/15 flex items-center justify-between">
+            <div className="p-5 rounded-2xl glass-panel flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#f59e0b]/15 text-[#f59e0b] flex items-center justify-center font-mono text-xs shadow-[0_0_12px_rgba(245,158,11,0.25)]">
+                <div className="w-8 h-8 rounded-lg bg-[#cf966b]/15 text-[#cf966b] flex items-center justify-center font-mono text-xs shadow-[0_0_12px_rgba(207,150,107,0.25)]">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                   </svg>
                 </div>
                 <div>
                   <div className="text-xs font-medium text-white">Full Cycle Ownership</div>
-                  <div className="text-[11px] text-[#a8a29e]">Architecture &bull; Low-Level C &bull; Web UIs &bull; Deployment</div>
+                  <div className="text-[11px] text-[#9ca3af]">Architecture &bull; C Routines &bull; Web UIs &bull; Deployment</div>
                 </div>
               </div>
-              <span className="font-mono text-[10px] text-[#fed7aa] bg-amber-500/10 border border-amber-500/20 px-2 py-1 rounded">
+              <span className="font-mono text-[10px] text-[#f5cfb3] bg-white/[0.04] border border-white/10 px-2 py-1 rounded">
                 100% PROD-READY
               </span>
             </div>

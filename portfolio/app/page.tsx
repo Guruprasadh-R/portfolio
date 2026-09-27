@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
-import BackgroundVideo from "@/components/BackgroundVideo";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -36,9 +35,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-[100dvh] bg-[#090807] text-[#fafaf9] relative overflow-hidden">
-      {/* Cinematic Looping Sunset Cloudscape Background Video */}
-      <BackgroundVideo />
+    <div className="min-h-[100dvh] bg-[#09090b] text-[#fafafa] relative selection:bg-[#f59e0b]/30 selection:text-white">
+      {/* Subtle Fixed Film Grain Overlay */}
+      <div className="grain-overlay" />
 
       {/* Dynamic Navigation Island */}
       <Navbar />

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   const [copied, setCopied] = useState(false);
-  const [hudVisible, setHudVisible] = useState(true);
+  const [hudOpen, setHudOpen] = useState(true);
 
   const copyEmail = () => {
     navigator.clipboard.writeText("guruprasadh.raghavan@gmail.com");
@@ -15,26 +15,19 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[100dvh] pt-32 pb-20 px-6 sm:px-10 max-w-7xl mx-auto flex flex-col justify-center">
-      {/* Subtle warm amber radial glow accentuating the sunset horizon */}
-      <div
-        className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[380px] rounded-full pointer-events-none opacity-[0.14] blur-[140px]"
-        style={{ background: "#f59e0b" }}
-        aria-hidden="true"
-      />
-
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-        {/* Left Column (7 cols): Asymmetric Editorial Typography & Action Cluster */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end">
+        {/* Left Column (7 cols): Editorial Typography & Direct Actions */}
         <div className="lg:col-span-7 flex flex-col items-start z-10">
           {/* Overline Atmospheric Beacon */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2.5 glass-pill px-4 py-1.5 rounded-full mb-6 border-amber-500/20"
+            className="flex items-center gap-2.5 glass-pill px-4 py-1.5 rounded-full mb-6 border-white/10"
           >
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-            <span className="font-mono text-xs text-[#fed7aa] tracking-tight">
-              Edge Engineer &bull; Chennai, IN &bull; 13.08&deg; N
+            <span className="w-2 h-2 rounded-full bg-[#cf966b] animate-pulse" />
+            <span className="font-mono text-xs text-[#f5cfb3] tracking-tight">
+              13.08&deg; N &bull; Chennai &bull; Alt: 3,420m
             </span>
           </motion.div>
 
@@ -43,10 +36,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.98] text-white mb-6"
+            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.98] text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]"
           >
             Engineering <br />
-            <span className="text-[#f59e0b] drop-shadow-[0_0_35px_rgba(245,158,11,0.35)]">
+            <span className="text-[#cf966b]">
               at the edge,
             </span>{" "}
             <br />
@@ -58,10 +51,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg text-[#d6d3d1] leading-relaxed max-w-[54ch] mb-8 drop-shadow-sm"
+            className="text-base sm:text-lg text-[#d6d3d1] leading-relaxed max-w-[52ch] mb-8 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]"
           >
             I&apos;m <span className="text-white font-medium">Guruprasadh R</span> — a software engineer
-            bridging low-level C systems architecture, distributed cloud databases, and reactive frontend experiences.
+            bridging low-level C systems architecture, distributed cloud databases, and reactive web applications.
             CS student at Anna University and co-maintainer of Celtrix OS.
           </motion.p>
 
@@ -74,7 +67,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="bg-[#f59e0b] hover:bg-[#d97706] text-[#090807] px-6 py-3 rounded-xl font-semibold text-sm tracking-tight flex items-center gap-2 tactile-btn shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:shadow-[0_0_40px_rgba(245,158,11,0.45)]"
+              className="bg-[#cf966b] hover:bg-[#d89e71] text-[#0b0d10] px-6 py-3 rounded-xl font-semibold text-sm tracking-tight flex items-center gap-2 tactile-btn shadow-[0_0_24px_rgba(207,150,107,0.35)] hover:shadow-[0_0_35px_rgba(207,150,107,0.5)]"
             >
               <span>Explore Selected Work</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -85,14 +78,14 @@ export default function Hero() {
             {/* Tactile Copy Email Button */}
             <button
               onClick={copyEmail}
-              className="glass-panel px-4 py-3 rounded-xl text-sm font-medium text-[#fafaf9] hover:text-white hover:bg-white/[0.08] transition-colors flex items-center gap-2 tactile-btn"
+              className="glass-panel px-4 py-3 rounded-xl text-sm font-medium text-[#fcfbf9] hover:text-white hover:bg-white/[0.08] transition-colors flex items-center gap-2 tactile-btn border-white/10"
             >
               {copied ? (
                 <>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5">
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
-                  <span className="text-emerald-400 font-mono text-xs">Email Copied!</span>
+                  <span className="text-emerald-400 font-mono text-xs">Email Copied</span>
                 </>
               ) : (
                 <>
@@ -109,7 +102,7 @@ export default function Hero() {
               href="https://github.com/Guruprasadh-R"
               target="_blank"
               rel="noreferrer"
-              className="glass-panel p-3 rounded-xl text-[#d6d3d1] hover:text-white hover:bg-white/[0.08] transition-colors tactile-btn"
+              className="glass-panel p-3 rounded-xl text-[#d6d3d1] hover:text-white hover:bg-white/[0.08] transition-colors tactile-btn border-white/10"
               aria-label="GitHub Profile"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -121,7 +114,7 @@ export default function Hero() {
               href="https://www.linkedin.com/in/guruprasadh-raghavan-a6a8b434a"
               target="_blank"
               rel="noreferrer"
-              className="glass-panel p-3 rounded-xl text-[#d6d3d1] hover:text-white hover:bg-white/[0.08] transition-colors tactile-btn"
+              className="glass-panel p-3 rounded-xl text-[#d6d3d1] hover:text-white hover:bg-white/[0.08] transition-colors tactile-btn border-white/10"
               aria-label="LinkedIn Profile"
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -131,73 +124,51 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Column (5 cols): Atmospheric Edge Station HUD Bento */}
+        {/* Right Column (5 cols): Unobtrusive Viewport Telemetry that leaves the cliff & developer visible */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 flex flex-col gap-4 z-10"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="lg:col-span-5 flex flex-col gap-3 z-10"
         >
-          {/* Main Atmospheric Telemetry Card */}
-          <div className="glass-panel rounded-3xl p-6 relative overflow-hidden border-amber-500/20 backdrop-blur-2xl">
-            {/* Header with terminal coordinates and toggle */}
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/[0.08]">
-              <div className="flex items-center gap-2 font-mono text-xs text-[#fed7aa]">
-                <span className="w-2 h-2 rounded-full bg-amber-400" />
-                <span>STATION // EDGE-NODE-01</span>
+          {/* Edge Telemetry Sheer Pill */}
+          <div className="glass-panel rounded-2xl p-5 border-white/10">
+            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.08]">
+              <div className="flex items-center gap-2 font-mono text-xs text-[#f5cfb3]">
+                <span className="w-2 h-2 rounded-full bg-[#cf966b] animate-ping" />
+                <span>EDGE STATION // 3,420M</span>
               </div>
               <button
-                onClick={() => setHudVisible(!hudVisible)}
-                className="text-[10px] font-mono text-[#a8a29e] hover:text-white glass-pill px-2.5 py-1 rounded-md transition-colors"
-                title="Toggle HUD detail"
+                onClick={() => setHudOpen(!hudOpen)}
+                className="font-mono text-[10px] text-[#9ca3af] hover:text-white glass-pill px-2.5 py-1 rounded transition-colors"
               >
-                {hudVisible ? "MINIMIZE" : "EXPAND"}
+                {hudOpen ? "MINIMIZE" : "EXPAND"}
               </button>
             </div>
 
-            {/* Telemetry Stream */}
-            {hudVisible && (
-              <div className="font-mono text-xs flex flex-col gap-2.5">
-                <div className="flex items-center justify-between text-[#a8a29e]">
-                  <span className="text-white/70">Atmosphere</span>
-                  <span className="text-amber-300 font-medium">Sunset &bull; 3,420m Barometric</span>
+            {hudOpen && (
+              <div className="font-mono text-xs flex flex-col gap-2 text-[#d6d3d1]">
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">Primary Focus</span>
+                  <span className="text-white font-medium">Systems in C &bull; Next.js &bull; PG</span>
                 </div>
-                <div className="flex items-center justify-between text-[#a8a29e]">
-                  <span className="text-white/70">Edge Runtime</span>
-                  <span className="text-emerald-400">Next.js App Router &bull; C</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">Stewardship</span>
+                  <span className="text-[#cf966b]">celtrix-os / co-maintainer</span>
                 </div>
-                <div className="flex items-center justify-between text-[#a8a29e]">
-                  <span className="text-white/70">Stewardship</span>
-                  <span className="text-[#f59e0b]">celtrix-os / co-maintainer</span>
-                </div>
-                <div className="flex items-center justify-between text-[#a8a29e]">
-                  <span className="text-white/70">Base Station</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-white/60">Base</span>
                   <span className="text-white">Anna University &bull; Chennai</span>
                 </div>
-                <div className="pt-2 border-t border-white/[0.08] flex items-center justify-between text-[11px]">
-                  <span className="text-[#a8a29e]">Signal Integrity</span>
-                  <span className="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between text-[11px]">
+                  <span className="text-[#9ca3af]">Atmosphere</span>
+                  <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    99.98% / Ultra-Low Latency
+                    Golden Hour &bull; Ultra-Low Latency
                   </span>
                 </div>
               </div>
             )}
-          </div>
-
-          {/* Quick Metrics Split Bento */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="glass-panel rounded-2xl p-5 border-amber-500/10">
-              <div className="font-mono text-xs text-[#fed7aa] mb-1">Architecture</div>
-              <div className="text-lg font-bold text-white tracking-tight">Full Stack</div>
-              <div className="text-xs text-[#a8a29e] mt-1">C Systems to Web APIs</div>
-            </div>
-
-            <div className="glass-panel rounded-2xl p-5 border-amber-500/10">
-              <div className="font-mono text-xs text-[#fed7aa] mb-1">Academics</div>
-              <div className="text-lg font-bold text-white tracking-tight">Anna Univ</div>
-              <div className="text-xs text-[#a8a29e] mt-1">Computer Science &bull; 2026</div>
-            </div>
           </div>
         </motion.div>
       </div>

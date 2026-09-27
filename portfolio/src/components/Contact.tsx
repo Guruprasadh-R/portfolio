@@ -41,8 +41,8 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto">
         {/* Section Monospace Header */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
-          <span className="font-mono text-xs text-[#fed7aa] tracking-widest uppercase">
+          <span className="w-2 h-2 rounded-full bg-[#cf966b] shadow-[0_0_8px_rgba(207,150,107,0.6)]" />
+          <span className="font-mono text-xs text-[#f5cfb3] tracking-widest uppercase">
             // 04. Transmission &amp; Inquiries
           </span>
         </div>
@@ -51,27 +51,27 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 items-start">
           {/* Left Column: Direct Outreach & Identity */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight">
-              Initiate a <span className="text-[#f59e0b] drop-shadow-[0_0_25px_rgba(245,158,11,0.3)]">direct conversation.</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
+              Initiate a <span className="text-[#cf966b]">direct conversation.</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-[#d6d3d1] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#d6d3d1] leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
               Available for full-time software engineering roles, systems engineering internships, and open-source contributions. Response time is typically within 24 hours.
             </p>
 
             {/* Tactile Direct Channels */}
             <div className="flex flex-col gap-3 pt-2">
               {/* Email Copy Card */}
-              <div className="glass-panel p-4 rounded-2xl border-amber-500/15 flex items-center justify-between gap-4">
+              <div className="glass-panel p-4 rounded-2xl flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[#f59e0b] flex-shrink-0 shadow-[0_0_12px_rgba(245,158,11,0.2)]">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-[#cf966b] flex-shrink-0 shadow-[0_0_12px_rgba(207,150,107,0.2)]">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect width="20" height="16" x="2" y="4" rx="2" />
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                     </svg>
                   </div>
                   <div className="min-w-0">
-                    <div className="font-mono text-[10px] text-[#a8a29e] uppercase tracking-wider">Direct Email</div>
+                    <div className="font-mono text-[10px] text-[#9ca3af] uppercase tracking-wider">Direct Email</div>
                     <div className="text-sm font-medium text-white truncate">{emailAddress}</div>
                   </div>
                 </div>
@@ -80,14 +80,14 @@ export default function Contact() {
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="glass-pill px-3 py-1.5 rounded-lg text-xs font-mono text-[#d6d3d1] hover:text-white transition-colors tactile-btn border-amber-500/20"
+                    className="glass-pill px-3 py-1.5 rounded-lg text-xs font-mono text-[#d6d3d1] hover:text-white transition-colors tactile-btn border-white/10"
                     title="Copy email to clipboard"
                   >
                     {copiedEmail ? "Copied" : "Copy"}
                   </button>
                   <a
                     href={`mailto:${emailAddress}`}
-                    className="bg-[#f59e0b] hover:bg-[#d97706] text-[#090807] px-3 py-1.5 rounded-lg text-xs font-semibold tracking-tight transition-all tactile-btn shadow-[0_0_15px_rgba(245,158,11,0.25)]"
+                    className="bg-[#cf966b] hover:bg-[#d89e71] text-[#0b0d10] px-3 py-1.5 rounded-lg text-xs font-semibold tracking-tight transition-all tactile-btn shadow-[0_0_15px_rgba(207,150,107,0.3)]"
                   >
                     Send
                   </a>
@@ -99,23 +99,23 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/guruprasadh-raghavan-a6a8b434a"
                 target="_blank"
                 rel="noreferrer"
-                className="glass-panel p-4 rounded-2xl border-amber-500/15 flex items-center justify-between gap-4 group hover:border-amber-500/40 transition-colors tactile-btn"
+                className="glass-panel p-4 rounded-2xl flex items-center justify-between gap-4 group hover:border-[#cf966b]/40 transition-colors tactile-btn"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white flex-shrink-0">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-[#a8a29e] uppercase tracking-wider">Professional Profile</div>
-                    <div className="text-sm font-medium text-white group-hover:text-[#f59e0b] transition-colors">
+                    <div className="font-mono text-[10px] text-[#9ca3af] uppercase tracking-wider">Professional Profile</div>
+                    <div className="text-sm font-medium text-white group-hover:text-[#cf966b] transition-colors">
                       linkedin.com/in/guruprasadh-raghavan
                     </div>
                   </div>
                 </div>
 
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#a8a29e] group-hover:text-white transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#9ca3af] group-hover:text-white transition-colors">
                   <path d="M7 17L17 7M17 7H7M17 7v10" />
                 </svg>
               </a>
@@ -125,23 +125,23 @@ export default function Contact() {
                 href="https://github.com/Guruprasadh-R"
                 target="_blank"
                 rel="noreferrer"
-                className="glass-panel p-4 rounded-2xl border-amber-500/15 flex items-center justify-between gap-4 group hover:border-amber-500/40 transition-colors tactile-btn"
+                className="glass-panel p-4 rounded-2xl flex items-center justify-between gap-4 group hover:border-[#cf966b]/40 transition-colors tactile-btn"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/[0.08] flex items-center justify-center text-white flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white flex-shrink-0">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] text-[#a8a29e] uppercase tracking-wider">GitHub Organization &amp; Code</div>
-                    <div className="text-sm font-medium text-white group-hover:text-[#f59e0b] transition-colors">
+                    <div className="font-mono text-[10px] text-[#9ca3af] uppercase tracking-wider">GitHub Organization &amp; Code</div>
+                    <div className="text-sm font-medium text-white group-hover:text-[#cf966b] transition-colors">
                       github.com/Guruprasadh-R
                     </div>
                   </div>
                 </div>
 
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#a8a29e] group-hover:text-white transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#9ca3af] group-hover:text-white transition-colors">
                   <path d="M7 17L17 7M17 7v10" />
                 </svg>
               </a>
@@ -149,11 +149,11 @@ export default function Contact() {
           </div>
 
           {/* Right Column: High-Agency Direct Transmission Form */}
-          <div className="lg:col-span-7 glass-panel p-6 sm:p-8 md:p-10 rounded-3xl border-amber-500/15">
-            <div className="mb-6 pb-4 border-b border-white/[0.08] flex items-center justify-between">
+          <div className="lg:col-span-7 glass-panel p-6 sm:p-8 md:p-10 rounded-3xl">
+            <div className="mb-6 pb-4 border-b border-white/10 flex items-center justify-between">
               <div>
                 <h3 className="text-lg font-semibold text-white">Direct Message Transmission</h3>
-                <p className="text-xs text-[#a8a29e] mt-0.5">Encrypted client dispatch to developer inbox</p>
+                <p className="text-xs text-[#9ca3af] mt-0.5">Client dispatch directly to developer inbox</p>
               </div>
               <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
                 SECURE
@@ -164,8 +164,8 @@ export default function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {/* Name */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-name" className="font-mono text-xs text-[#fed7aa] uppercase tracking-wider">
-                    Your Name <span className="text-[#f59e0b]">*</span>
+                  <label htmlFor="contact-name" className="font-mono text-xs text-[#f5cfb3] uppercase tracking-wider">
+                    Your Name <span className="text-[#cf966b]">*</span>
                   </label>
                   <input
                     id="contact-name"
@@ -174,14 +174,14 @@ export default function Contact() {
                     placeholder="e.g. Alex Morgan"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-[#090807]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                    className="bg-black/30 border border-white/10 focus:border-[#cf966b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col gap-2">
-                  <label htmlFor="contact-email" className="font-mono text-xs text-[#fed7aa] uppercase tracking-wider">
-                    Email Address <span className="text-[#f59e0b]">*</span>
+                  <label htmlFor="contact-email" className="font-mono text-xs text-[#f5cfb3] uppercase tracking-wider">
+                    Email Address <span className="text-[#cf966b]">*</span>
                   </label>
                   <input
                     id="contact-email"
@@ -190,14 +190,14 @@ export default function Contact() {
                     placeholder="alex@domain.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-[#090807]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                    className="bg-black/30 border border-white/10 focus:border-[#cf966b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
                   />
                 </div>
               </div>
 
               {/* Subject */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="contact-subject" className="font-mono text-xs text-[#fed7aa] uppercase tracking-wider">
+                <label htmlFor="contact-subject" className="font-mono text-xs text-[#f5cfb3] uppercase tracking-wider">
                   Subject / Scope
                 </label>
                 <input
@@ -206,14 +206,14 @@ export default function Contact() {
                   placeholder="Software Engineering Opportunity / Project Architecture"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="bg-[#090807]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  className="bg-black/30 border border-white/10 focus:border-[#cf966b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
                 />
               </div>
 
               {/* Message */}
               <div className="flex flex-col gap-2">
-                <label htmlFor="contact-message" className="font-mono text-xs text-[#fed7aa] uppercase tracking-wider">
-                  Message Details <span className="text-[#f59e0b]">*</span>
+                <label htmlFor="contact-message" className="font-mono text-xs text-[#f5cfb3] uppercase tracking-wider">
+                  Message Details <span className="text-[#cf966b]">*</span>
                 </label>
                 <textarea
                   id="contact-message"
@@ -222,7 +222,7 @@ export default function Contact() {
                   placeholder="Briefly describe your team, timeline, or engineering problem..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-[#090807]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none"
+                  className="bg-black/30 border border-white/10 focus:border-[#cf966b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -235,20 +235,20 @@ export default function Contact() {
                 className={`w-full py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all duration-200 tactile-btn flex items-center justify-center gap-2 ${
                   status === "success"
                     ? "bg-emerald-500 text-white"
-                    : "bg-[#f59e0b] hover:bg-[#d97706] text-[#090807] shadow-[0_0_25px_rgba(245,158,11,0.25)] hover:shadow-[0_0_35px_rgba(245,158,11,0.4)]"
+                    : "bg-[#cf966b] hover:bg-[#d89e71] text-[#0b0d10] shadow-[0_0_25px_rgba(207,150,107,0.3)] hover:shadow-[0_0_35px_rgba(207,150,107,0.5)]"
                 }`}
               >
                 {status === "idle" && (
                   <>
                     <span>Transmit Message</span>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <path d="M7 17L17 7M17 7H7M17 7v10" />
+                      <path d="M7 17L17 7M17 7v10" />
                     </svg>
                   </>
                 )}
                 {status === "submitting" && (
                   <span className="flex items-center gap-2 font-mono">
-                    <span className="w-3 h-3 rounded-full border-2 border-[#090807] border-t-transparent animate-spin" />
+                    <span className="w-3 h-3 rounded-full border-2 border-[#0b0d10] border-t-transparent animate-spin" />
                     Transmitting...
                   </span>
                 )}

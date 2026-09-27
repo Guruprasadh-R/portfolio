@@ -12,7 +12,6 @@ export default function BackgroundVideo() {
     if (!video) return;
 
     video.play().catch(() => {
-      // Autoplay with sound might fail, but muted should succeed
       setIsPlaying(false);
     });
 
@@ -37,7 +36,7 @@ export default function BackgroundVideo() {
 
   return (
     <div className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden select-none">
-      {/* Background Video Element */}
+      {/* Background Video Element - Stays alive & clearly visible across the entire page */}
       <video
         ref={videoRef}
         autoPlay
@@ -45,7 +44,7 @@ export default function BackgroundVideo() {
         muted
         playsInline
         poster="/bg-poster.jpg"
-        className={`w-full h-full object-cover scale-[1.02] transform-gpu transition-opacity duration-1000 ${
+        className={`w-full h-full object-cover scale-[1.01] transform-gpu transition-opacity duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-95"
         }`}
       >
@@ -56,30 +55,27 @@ export default function BackgroundVideo() {
         />
       </video>
 
-      {/* Atmospheric Vignette & Twilight Color Tinting */}
-      {/* 1. Left side darker gradient to keep hero text razor sharp */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#090807]/90 via-[#090807]/50 to-[#090807]/20 pointer-events-none" />
+      {/* Subtle Atmospheric Vignette - Non-intrusive, preserves maximum video visibility */}
+      {/* Left text-support fade: Very soft so clouds & sky remain vivid */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b0d10]/70 via-[#0b0d10]/25 to-transparent pointer-events-none" />
 
-      {/* 2. Top & Bottom subtle fade for navbar and smooth page depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#090807]/70 via-transparent to-[#090807]/85 pointer-events-none" />
+      {/* Top & bottom gentle edge framing */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0b0d10]/40 via-transparent to-[#0b0d10]/60 pointer-events-none" />
 
-      {/* 3. Warm sunset ambient glow overlay */}
-      <div className="absolute inset-0 bg-[#d97706]/[0.03] mix-blend-color-dodge pointer-events-none" />
-
-      {/* 4. Film grain texture matching the video's analog 35mm grain */}
+      {/* Matching 35mm Analog Film Grain Overlay */}
       <div className="grain-overlay" />
 
-      {/* Ambient Control Pill (Pointer events enabled for interactive toggle) */}
+      {/* Minimalist Live Atmosphere Pill */}
       <div className="absolute bottom-6 right-6 z-30 pointer-events-auto hidden sm:flex items-center gap-2">
         <button
           onClick={togglePlay}
-          className="glass-pill px-3 py-1.5 rounded-full flex items-center gap-2 text-[11px] font-mono text-[#e7e5e4] hover:text-white transition-all tactile-btn shadow-lg"
+          className="glass-pill px-3 py-1.5 rounded-full flex items-center gap-2 text-[11px] font-mono text-[#d6d3d1] hover:text-white transition-all tactile-btn shadow-lg"
           title={isPlaying ? "Pause ambient video" : "Play ambient video"}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-          <span>{isPlaying ? "Live Atmosphere" : "Atmosphere Paused"}</span>
-          <span className="text-white/40">·</span>
-          <span className="text-amber-300/80">3,420m</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-[#cf966b] animate-pulse" />
+          <span>{isPlaying ? "Edge Horizon" : "Paused"}</span>
+          <span className="text-white/30">&bull;</span>
+          <span className="text-[#cf966b]">3,420m</span>
         </button>
       </div>
     </div>
