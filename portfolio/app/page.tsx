@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -16,7 +17,7 @@ export default function Home() {
   // Smooth inertial scrolling with Lenis
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.15,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
@@ -35,20 +36,25 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-[100dvh] bg-[#09090b] text-[#fafafa] relative selection:bg-[#f59e0b]/30 selection:text-white">
-      {/* Subtle Fixed Film Grain Overlay */}
-      <div className="grain-overlay" />
+    <div className="min-h-[100dvh] bg-transparent text-[#fafafa] relative selection:bg-[#f59e0b]/30 selection:text-white">
+      {/* 100% Pure, Vibrant, Seamless Dual-Layer Video Background */}
+      <BackgroundVideo />
 
-      {/* Dynamic Navigation Island */}
+      {/* Atmospheric Navigation Bar */}
       <Navbar />
 
-      {/* Main Content Flow */}
+      {/* Main Narrative Flow */}
       <main className="relative z-10 flex flex-col">
+        {/* Full Viewport 100% Unfiltered Video-Integrated Hero */}
         <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Contact />
+
+        {/* Subsequent Sections Transition Layer (Begins Only on Scroll) */}
+        <div className="relative bg-gradient-to-b from-transparent via-[#0b0e14]/70 to-[#0b0e14]">
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+        </div>
       </main>
 
       {/* Editorial Footer */}

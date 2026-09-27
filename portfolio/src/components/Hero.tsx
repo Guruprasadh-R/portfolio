@@ -1,177 +1,172 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [copied, setCopied] = useState(false);
-  const [hudOpen, setHudOpen] = useState(true);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText("guruprasadh.raghavan@gmail.com");
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2200);
-  };
-
   return (
-    <section className="relative min-h-[100dvh] pt-32 pb-20 px-6 sm:px-10 max-w-7xl mx-auto flex flex-col justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end">
-        {/* Left Column (7 cols): Editorial Typography & Direct Actions */}
-        <div className="lg:col-span-7 flex flex-col items-start z-10">
-          {/* Overline Atmospheric Beacon */}
+    <section className="relative min-h-[100dvh] pt-20 sm:pt-28 pb-8 sm:pb-10 px-4 sm:px-8 max-w-7xl mx-auto flex flex-col justify-between">
+      {/* 12-Column Grid with Center Breathing Room for the Cliff Developer */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start my-auto pt-4 sm:pt-6">
+        {/* Left Column (Cols 1-5): Editorial Typography & Direct Actions */}
+        <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start z-10">
+          {/* Overline Kicker Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2.5 glass-pill px-4 py-1.5 rounded-full mb-6 border-white/10"
+            className="flex items-center gap-2 glass-pill px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full mb-5 sm:mb-6 border border-white/[0.15] shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
           >
-            <span className="w-2 h-2 rounded-full bg-[#cf966b] animate-pulse" />
-            <span className="font-mono text-xs text-[#f5cfb3] tracking-tight">
-              13.08&deg; N &bull; Chennai &bull; Alt: 3,420m
+            <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]" />
+            <span className="font-mono text-[10px] sm:text-[11px] text-[#e5e7eb] tracking-widest uppercase">
+              IDEAS &bull; CODE &bull; SYSTEMS
             </span>
           </motion.div>
 
-          {/* Main Headline */}
+          {/* High-Impact Editorial Serif Headline with Localized Drop-Shadow */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter leading-[0.98] text-white mb-6 drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]"
+            className="text-3xl sm:text-5xl lg:text-[3.65rem] xl:text-[4rem] font-serif leading-[1.08] sm:leading-[1.06] tracking-tight text-white mb-5 sm:mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] drop-shadow-[0_8px_28px_rgba(0,0,0,0.85)]"
           >
-            Engineering <br />
-            <span className="text-[#cf966b]">
-              at the edge,
+            Engineering curiosity <br />
+            into{" "}
+            <span className="text-gold-gradient font-serif italic font-normal">
+              products people
             </span>{" "}
             <br />
-            above the clouds.
+            actually rely on.
           </motion.h1>
 
-          {/* Subtitle / Narrative */}
+          {/* Subtitle / Bio Narrative with Localized Drop-Shadow */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-base sm:text-lg text-[#d6d3d1] leading-relaxed max-w-[52ch] mb-8 drop-shadow-[0_1px_6px_rgba(0,0,0,0.8)]"
+            className="text-xs sm:text-base text-[#f3f4f6] leading-relaxed max-w-[46ch] mb-6 sm:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
           >
-            I&apos;m <span className="text-white font-medium">Guruprasadh R</span> — a software engineer
-            bridging low-level C systems architecture, distributed cloud databases, and reactive web applications.
-            CS student at Anna University and co-maintainer of Celtrix OS.
+            I&apos;m <span className="text-white font-medium">Guruprasadh R</span>, a developer and CS student at Anna University building dependable, high-throughput digital systems — from operating system internals in Celtrix OS to scalable full-stack cloud applications.
           </motion.p>
 
-          {/* Actions Cluster */}
+          {/* Tactile Actions Cluster */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center gap-3.5"
+            className="flex flex-wrap items-center gap-2.5 sm:gap-3.5"
           >
             <a
               href="#projects"
-              className="bg-[#cf966b] hover:bg-[#d89e71] text-[#0b0d10] px-6 py-3 rounded-xl font-semibold text-sm tracking-tight flex items-center gap-2 tactile-btn shadow-[0_0_24px_rgba(207,150,107,0.35)] hover:shadow-[0_0_35px_rgba(207,150,107,0.5)]"
+              className="bg-gradient-to-r from-[#fbbf24] to-[#f59e0b] hover:from-[#f59e0b] hover:to-[#d97706] text-[#0b0e14] px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-sm tracking-tight flex items-center gap-2 tactile-btn shadow-[0_0_24px_rgba(245,158,11,0.35)]"
             >
-              <span>Explore Selected Work</span>
+              <span>Explore My Work</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M7 17L17 7M17 7H7M17 7v10" />
               </svg>
             </a>
 
-            {/* Tactile Copy Email Button */}
-            <button
-              onClick={copyEmail}
-              className="glass-panel px-4 py-3 rounded-xl text-sm font-medium text-[#fcfbf9] hover:text-white hover:bg-white/[0.08] transition-colors flex items-center gap-2 tactile-btn border-white/10"
-            >
-              {copied ? (
-                <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5">
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  <span className="text-emerald-400 font-mono text-xs">Email Copied</span>
-                </>
-              ) : (
-                <>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                    <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                  </svg>
-                  <span>Copy Email</span>
-                </>
-              )}
-            </button>
-
             <a
-              href="https://github.com/Guruprasadh-R"
-              target="_blank"
-              rel="noreferrer"
-              className="glass-panel p-3 rounded-xl text-[#d6d3d1] hover:text-white hover:bg-white/[0.08] transition-colors tactile-btn border-white/10"
-              aria-label="GitHub Profile"
+              href="#about"
+              className="glass-panel px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium text-white hover:text-[#fbbf24] hover:border-[#f59e0b]/40 transition-all tactile-btn border border-white/[0.15] shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/guruprasadh-raghavan-a6a8b434a"
-              target="_blank"
-              rel="noreferrer"
-              className="glass-panel p-3 rounded-xl text-[#d6d3d1] hover:text-white hover:bg-white/[0.08] transition-colors tactile-btn border-white/10"
-              aria-label="LinkedIn Profile"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-              </svg>
+              <span>About My Journey</span>
             </a>
           </motion.div>
         </div>
 
-        {/* Right Column (5 cols): Unobtrusive Viewport Telemetry that leaves the cliff & developer visible */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="lg:col-span-5 flex flex-col gap-3 z-10"
-        >
-          {/* Edge Telemetry Sheer Pill */}
-          <div className="glass-panel rounded-2xl p-5 border-white/10">
-            <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.08]">
-              <div className="flex items-center gap-2 font-mono text-xs text-[#f5cfb3]">
-                <span className="w-2 h-2 rounded-full bg-[#cf966b] animate-ping" />
-                <span>EDGE STATION // 3,420M</span>
-              </div>
-              <button
-                onClick={() => setHudOpen(!hudOpen)}
-                className="font-mono text-[10px] text-[#9ca3af] hover:text-white glass-pill px-2.5 py-1 rounded transition-colors"
-              >
-                {hudOpen ? "MINIMIZE" : "EXPAND"}
-              </button>
+        {/* Center Buffer Space (Cols 6-8): Intentionally Open to Showcase Cliff & Developer */}
+        <div className="hidden lg:block lg:col-span-3 pointer-events-none" aria-hidden="true" />
+
+        {/* Right Column (Cols 9-12): Flight Progression & Telemetry Terminal on Far Right */}
+        <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-6 items-end z-10 w-full lg:w-auto">
+          {/* Vertical Flight Progression Tracker */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden sm:flex flex-col items-end gap-2.5"
+          >
+            <div className="font-mono text-[11px] text-[#fef3c7] italic tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              Architecting with craft &bull; Scaling with discipline ~
             </div>
 
-            {hudOpen && (
-              <div className="font-mono text-xs flex flex-col gap-2 text-[#d6d3d1]">
-                <div className="flex justify-between items-center">
-                  <span className="text-white/60">Primary Focus</span>
-                  <span className="text-white font-medium">Systems in C &bull; Next.js &bull; PG</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white/60">Stewardship</span>
-                  <span className="text-[#cf966b]">celtrix-os / co-maintainer</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-white/60">Base</span>
-                  <span className="text-white">Anna University &bull; Chennai</span>
-                </div>
-                <div className="pt-2 border-t border-white/[0.06] flex items-center justify-between text-[11px]">
-                  <span className="text-[#9ca3af]">Atmosphere</span>
-                  <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Golden Hour &bull; Ultra-Low Latency
-                  </span>
-                </div>
+            <div className="glass-panel px-4 py-3 rounded-2xl border border-white/[0.15] flex flex-col gap-2 font-mono text-xs shadow-[0_10px_25px_rgba(0,0,0,0.5)]">
+              <div className="flex items-center gap-3 text-[#fbbf24]">
+                <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_10px_#f59e0b] animate-pulse" />
+                <span className="font-bold">01 / Architect</span>
               </div>
-            )}
-          </div>
-        </motion.div>
+              <div className="flex items-center gap-3 text-[#d1d5db] pl-5">
+                <span>02 / Build</span>
+              </div>
+              <div className="flex items-center gap-3 text-[#d1d5db] pl-5">
+                <span>03 / Refine</span>
+              </div>
+              <div className="flex items-center gap-3 text-[#d1d5db] pl-5">
+                <span>04 / Scale</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Floating Telemetry Terminal Card on the Right Cloud Horizon */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full glass-panel-amber rounded-2xl p-3.5 sm:p-5 shadow-[0_20px_45px_rgba(0,0,0,0.6)] backdrop-blur-xl border border-[#f59e0b]/30"
+          >
+            {/* Terminal Header */}
+            <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/[0.1]">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+              </div>
+              <span className="font-mono text-[9px] sm:text-[10px] text-[#9ca3af] tracking-tight">
+                ~/guruprasadh/sysinfo
+              </span>
+            </div>
+
+            {/* Terminal Lines */}
+            <div className="font-mono text-[11px] sm:text-xs flex flex-col gap-1 sm:gap-1.5 text-[#e5e7eb]">
+              <div className="text-[#fbbf24]">
+                &gt; Passion for solving hard engineering problems
+              </div>
+              <div className="text-white/90">
+                &gt; Clean code. High throughput. Real impact.
+              </div>
+              <div className="text-[#cbd5e1]">
+                &gt; Co-maintainer @ celtrix-os / kernel
+              </div>
+              <div className="text-[#9ca3af]">
+                &gt; CS Undergrad @ Anna University
+              </div>
+              <div className="flex items-center gap-1 text-[#f59e0b] pt-0.5">
+                <span>&gt; Always learning</span>
+                <span className="w-1.5 h-3.5 bg-[#f59e0b] animate-pulse" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
+
+      {/* Bottom Center: Minimalist "Scroll to Explore" Indicator */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="flex flex-col items-center justify-center gap-1.5 pt-3 pb-1 pointer-events-none"
+      >
+        <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-[#f59e0b]/50 flex justify-center pt-1 sm:pt-1.5 bg-[#0b0e14]/50 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+            className="w-1 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]"
+          />
+        </div>
+        <span className="font-mono text-[9px] sm:text-[10px] text-[#e5e7eb] tracking-widest uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+          Scroll to explore
+        </span>
+      </motion.div>
     </section>
   );
 }

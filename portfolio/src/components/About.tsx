@@ -3,148 +3,171 @@
 import { motion } from "framer-motion";
 
 export default function About() {
+  const highlights = [
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+      ),
+      value: "3+ Core Systems",
+      label: "Production Deployments",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+        </svg>
+      ),
+      value: "Full Stack & C",
+      label: "Architecture to Metal",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+          <path d="M6 12v5c3 3 9 3 12 0v-5" />
+        </svg>
+      ),
+      value: "Anna University",
+      label: "CS Engineering",
+    },
+    {
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+        </svg>
+      ),
+      value: "Open For Roles",
+      label: "Software & Systems",
+    },
+  ];
+
   return (
-    <section id="about" className="py-24 md:py-32 px-4 sm:px-6 md:px-10 relative">
+    <section id="about" className="py-24 md:py-32 px-4 sm:px-8 relative">
       <div className="max-w-7xl mx-auto">
-        {/* Section Monospace Header */}
+        {/* Section Header */}
         <div className="flex items-center gap-2 mb-8">
-          <span className="w-2 h-2 rounded-full bg-[#cf966b] shadow-[0_0_8px_rgba(207,150,107,0.6)]" />
-          <span className="font-mono text-xs text-[#f5cfb3] tracking-widest uppercase">
-            // 01. Foundations &amp; Philosophy
+          <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]" />
+          <span className="font-mono text-xs text-[#9ca3af] tracking-widest uppercase">
+            / 01. ABOUT ME
           </span>
         </div>
 
-        {/* Asymmetric 7/5 Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
-          {/* Left Column: Narrative Statement */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white leading-[1.15] drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
-              Engineering high-throughput web applications with{" "}
-              <span className="text-[#cf966b]">
-                low-level systems discipline.
+        {/* Top Split: Section Headline & Narrative */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
+          <div className="lg:col-span-7">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-[1.15]">
+              Crafting systems that{" "}
+              <span className="text-gold-gradient font-serif italic">
+                make fundamental sense.
               </span>
             </h2>
+          </div>
 
-            <div className="space-y-4 text-sm sm:text-base text-[#d6d3d1] leading-relaxed max-w-[65ch] drop-shadow-[0_1px_4px_rgba(0,0,0,0.7)]">
-              <p>
-                I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Anna University based in Chennai, India. My work spans the continuum between distributed web systems and operating system internals.
-              </p>
-              <p>
-                I believe that resilient software requires both micro-architectural empathy and uncompromising frontend polish. Whether optimizing transactional state in PostgreSQL, authoring low-level C routines as a co-maintainer of Celtrix OS, or sculpting reactive micro-interactions in Next.js, I build software that executes predictably under pressure.
-              </p>
-              <p>
-                Currently seeking high-velocity engineering teams, systems engineering internships, and product-focused collaborative challenges.
+          <div className="lg:col-span-5 text-sm sm:text-base text-[#d1d5db] leading-relaxed flex flex-col gap-4">
+            <p>
+              I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Anna University based in Chennai, India. My work bridges distributed web platforms with operating system internals.
+            </p>
+            <p>
+              I believe that resilient software requires both micro-architectural empathy and uncompromising user experience polish. Whether orchestrating transactional state in PostgreSQL or authoring low-level C utilities as a co-maintainer of Celtrix OS, I engineer software that executes predictably under pressure.
+            </p>
+          </div>
+        </div>
+
+        {/* Quick Highlights Row (derived from reference aesthetic) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-14">
+          {highlights.map((item, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -3 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              className="glass-panel p-5 rounded-2xl border border-white/[0.08] flex flex-col items-start gap-3 group hover:border-[#f59e0b]/30 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#f59e0b]/10 text-[#f59e0b] flex items-center justify-center group-hover:scale-110 transition-transform">
+                {item.icon}
+              </div>
+              <div>
+                <div className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  {item.value}
+                </div>
+                <div className="text-xs text-[#9ca3af] font-mono mt-0.5">
+                  {item.label}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bento Engineering Pillars */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Pillar 1: Academic Discipline */}
+          <div className="glass-panel p-6 rounded-2xl border border-white/[0.08] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono text-[10px] text-[#f59e0b] tracking-wider uppercase bg-[#f59e0b]/10 px-2 py-0.5 rounded">
+                  UNDERGRADUATE
+                </span>
+                <span className="font-mono text-xs text-[#71717a]">2023 - 2027</span>
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2">
+                Computer Science &amp; Engineering
+              </h3>
+              <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed mb-4">
+                Rigorous focus on algorithmic computational complexity, operating systems concurrency, distributed database design, and computer systems architecture.
               </p>
             </div>
-
-            {/* Micro Telemetry Row */}
-            <div className="pt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/10">
-              <div>
-                <div className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider">Education</div>
-                <div className="text-sm font-medium text-white mt-1">Anna University</div>
-                <div className="font-mono text-xs text-[#f5cfb3]/80">B.Tech in CS</div>
-              </div>
-              <div>
-                <div className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider">Base</div>
-                <div className="text-sm font-medium text-white mt-1">Chennai, India</div>
-                <div className="font-mono text-xs text-[#f5cfb3]/80">UTC+05:30 (IST)</div>
-              </div>
-              <div className="col-span-2 sm:col-span-1">
-                <div className="font-mono text-[11px] text-[#9ca3af] uppercase tracking-wider">Open Source</div>
-                <div className="text-sm font-medium text-white mt-1">Celtrix OS</div>
-                <div className="font-mono text-xs text-[#cf966b]">Co-maintainer</div>
-              </div>
+            <div className="font-mono text-xs text-[#fbbf24] pt-3 border-t border-white/[0.06]">
+              Anna University &bull; Chennai
             </div>
           </div>
 
-          {/* Right Column: Asymmetric Sheer Bento Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
-            {/* Card 1: Academic & Systems Foundation */}
-            <motion.div
-              whileHover={{ y: -2 }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="glass-panel p-6 rounded-3xl relative overflow-hidden group"
-            >
+          {/* Pillar 2: Open Source Stewardship */}
+          <div className="glass-panel-amber p-6 rounded-2xl border border-[#f59e0b]/20 flex flex-col justify-between">
+            <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-[11px] text-[#cf966b] tracking-wider uppercase flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
-                  </svg>
-                  Academic Rigor
+                <span className="font-mono text-[10px] text-emerald-400 tracking-wider uppercase bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                  CO-MAINTAINER
                 </span>
-                <span className="font-mono text-[10px] text-[#f5cfb3] px-2 py-0.5 rounded bg-white/[0.05] border border-white/10">
-                  UNDERGRADUATE
-                </span>
+                <span className="font-mono text-xs text-[#71717a]">Active</span>
               </div>
-              <h3 className="text-base font-semibold text-white mb-1">
-                Computer Science &amp; Engineering
-              </h3>
-              <p className="text-xs text-[#d6d3d1] leading-relaxed mb-4">
-                Curriculum centered on computational complexity, concurrent operating systems, distributed database architecture, and compiler construction.
-              </p>
-              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] text-[#f5cfb3]">
-                <span className="px-2 py-1 rounded bg-black/30 border border-white/10">Operating Systems</span>
-                <span className="px-2 py-1 rounded bg-black/30 border border-white/10">Data Structures</span>
-                <span className="px-2 py-1 rounded bg-black/30 border border-white/10">Algorithms</span>
-              </div>
-            </motion.div>
-
-            {/* Card 2: Open Source Stewardship */}
-            <motion.div
-              whileHover={{ y: -2 }}
-              transition={{ type: "spring", stiffness: 100, damping: 20 }}
-              className="glass-panel p-6 rounded-3xl relative overflow-hidden group"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <span className="font-mono text-[11px] text-emerald-400 tracking-wider uppercase flex items-center gap-1.5">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="6" y1="3" x2="6" y2="15" />
-                    <circle cx="18" cy="6" r="3" />
-                    <circle cx="6" cy="18" r="3" />
-                    <path d="M18 9a9 9 0 0 1-9 9" />
-                  </svg>
-                  Active Stewardship
-                </span>
-                <span className="font-mono text-[10px] text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">
-                  MAINTAINER
-                </span>
-              </div>
-              <h3 className="text-base font-semibold text-white mb-1">
+              <h3 className="text-lg font-bold text-white mb-2">
                 Celtrix Operating System
               </h3>
-              <p className="text-xs text-[#d6d3d1] leading-relaxed mb-4">
-                Direct contributor and co-maintainer driving core architecture reviews, kernel utility implementations in C, and developer onboarding workflows.
+              <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed mb-4">
+                Core contributor driving architectural code reviews, kernel memory paging routines, and Unix-like systems utilities implemented in modern C.
               </p>
-              <a
-                href="https://github.com/celtrix-os/Celtrix"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 font-mono text-xs text-[#cf966b] hover:text-[#d89e71] transition-colors group-hover:translate-x-0.5"
-              >
-                <span>github.com/celtrix-os/Celtrix</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M7 17L17 7M17 7H7M17 7v10" />
-                </svg>
-              </a>
-            </motion.div>
+            </div>
+            <a
+              href="https://github.com/celtrix-os/Celtrix"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 font-mono text-xs text-[#fbbf24] hover:text-white transition-colors pt-3 border-t border-white/[0.06]"
+            >
+              <span>github.com/celtrix-os/Celtrix</span>
+              <span className="text-xs">&rarr;</span>
+            </a>
+          </div>
 
-            {/* Card 3: Execution Values / Principles */}
-            <div className="p-5 rounded-2xl glass-panel flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#cf966b]/15 text-[#cf966b] flex items-center justify-center font-mono text-xs shadow-[0_0_12px_rgba(207,150,107,0.25)]">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-                  </svg>
-                </div>
-                <div>
-                  <div className="text-xs font-medium text-white">Full Cycle Ownership</div>
-                  <div className="text-[11px] text-[#9ca3af]">Architecture &bull; C Routines &bull; Web UIs &bull; Deployment</div>
-                </div>
+          {/* Pillar 3: Product Engineering Philosophy */}
+          <div className="glass-panel p-6 rounded-2xl border border-white/[0.08] flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono text-[10px] text-[#fbbf24] tracking-wider uppercase bg-white/[0.05] px-2 py-0.5 rounded">
+                  EXECUTION
+                </span>
+                <span className="font-mono text-xs text-[#71717a]">Methodology</span>
               </div>
-              <span className="font-mono text-[10px] text-[#f5cfb3] bg-white/[0.04] border border-white/10 px-2 py-1 rounded">
-                100% PROD-READY
-              </span>
+              <h3 className="text-lg font-bold text-white mb-2">
+                Full-Cycle Ownership
+              </h3>
+              <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed mb-4">
+                From conceptual wireframes to high-throughput data schemas, atomic payment gateways, containerized CI/CD pipelines, and fluid reactive client interfaces.
+              </p>
+            </div>
+            <div className="font-mono text-xs text-[#9ca3af] pt-3 border-t border-white/[0.06]">
+              Deterministic &bull; Zero Bloat &bull; Production Ready
             </div>
           </div>
         </div>

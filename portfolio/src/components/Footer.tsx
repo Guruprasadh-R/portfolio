@@ -6,21 +6,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-4 sm:px-6 md:px-10 border-t border-white/10 relative bg-black/20 backdrop-blur-md">
+    <footer className="py-12 px-4 sm:px-8 border-t border-white/[0.08] relative bg-[#0b0e14]/90 backdrop-blur-md">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left: Monogram and Editorial Info */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <div className="flex items-center gap-2.5">
-            <div className="w-6 h-6 rounded-full bg-[#cf966b] text-[#0b0d10] font-bold text-xs flex items-center justify-center font-mono shadow-[0_0_10px_rgba(207,150,107,0.4)]">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#fbbf24] to-[#f59e0b] text-[#0b0e14] font-bold text-xs flex items-center justify-center font-mono shadow-[0_0_10px_rgba(245,158,11,0.3)]">
               G
             </div>
             <span className="text-sm font-semibold text-white tracking-tight">
               Guruprasadh R
             </span>
           </div>
-          <span className="hidden sm:inline-block text-[#57534e]">&bull;</span>
+          <span className="hidden sm:inline-block text-[#52525b]">&bull;</span>
           <span className="text-xs text-[#9ca3af] font-mono">
-            Anna University &bull; Chennai, IN (IST UTC+5:30) &bull; Edge Station
+            Anna University &bull; Chennai, IN (IST UTC+5:30)
           </span>
         </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
             href="https://github.com/Guruprasadh-R"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-[#d6d3d1] hover:text-[#cf966b] transition-colors"
+            className="font-mono text-xs text-[#9ca3af] hover:text-[#fbbf24] transition-colors"
           >
             GitHub
           </a>
@@ -38,20 +38,20 @@ export default function Footer() {
             href="https://www.linkedin.com/in/guruprasadh-raghavan-a6a8b434a"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-xs text-[#d6d3d1] hover:text-[#cf966b] transition-colors"
+            className="font-mono text-xs text-[#9ca3af] hover:text-[#fbbf24] transition-colors"
           >
             LinkedIn
           </a>
           <a
             href="mailto:guruprasadh.raghavan@gmail.com"
-            className="font-mono text-xs text-[#d6d3d1] hover:text-[#cf966b] transition-colors"
+            className="font-mono text-xs text-[#9ca3af] hover:text-[#fbbf24] transition-colors"
           >
             Email
           </a>
 
           <button
             onClick={scrollToTop}
-            className="glass-pill px-3 py-1.5 rounded-full font-mono text-[11px] text-[#f5cfb3] hover:text-white flex items-center gap-1.5 transition-colors tactile-btn border-white/10"
+            className="glass-pill px-3 py-1.5 rounded-full font-mono text-[11px] text-[#d1d5db] hover:text-white flex items-center gap-1.5 transition-colors tactile-btn border border-white/[0.08]"
             aria-label="Scroll back to top"
           >
             <span>Top</span>
