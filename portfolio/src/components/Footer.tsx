@@ -6,7 +6,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="py-12 px-4 sm:px-8 border-t border-white/[0.08] relative bg-[#0b0e14]/90 backdrop-blur-md">
+    <footer className="py-12 px-4 sm:px-8 border-t border-white/[0.08] relative bg-[#0b0e14]/30 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left: Monogram and Editorial Info */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
           <span className="hidden sm:inline-block text-[#52525b]">&bull;</span>
           <span className="text-xs text-[#9ca3af] font-mono">
-            Anna University &bull; Chennai, IN (IST UTC+5:30)
+            Vels University &bull; Chennai, IN (IST UTC+5:30)
           </span>
         </div>
 

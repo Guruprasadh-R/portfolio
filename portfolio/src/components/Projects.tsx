@@ -28,7 +28,7 @@ export default function Projects() {
 
         {/* Section Headline */}
         <div className="mb-14">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight max-w-2xl drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
             Engineered systems from{" "}
             <span className="text-gold-gradient font-serif italic">
               distributed cloud SaaS

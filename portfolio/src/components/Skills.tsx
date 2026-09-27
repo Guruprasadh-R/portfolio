@@ -85,13 +85,13 @@ export default function Skills() {
         {/* Section Headline */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
               Architectural{" "}
               <span className="text-gold-gradient font-serif italic">
                 competencies.
               </span>
             </h2>
-            <p className="text-sm sm:text-base text-[#d1d5db] mt-2 max-w-xl">
+            <p className="text-sm sm:text-base text-[#e5e7eb] mt-2 max-w-xl drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
               From hardware-adjacent kernel routines to modern reactive cloud applications.
             </p>
           </div>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -108,14 +108,14 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Direct Outreach & Identity */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
               Initiate a{" "}
               <span className="text-gold-gradient font-serif italic">
                 direct conversation.
               </span>
             </h2>
 
-            <p className="text-sm sm:text-base text-[#d1d5db] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#e5e7eb] leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
               Available for full-time software engineering roles, systems engineering internships, and open-source contributions. Response time is typically within 24 hours.
             </p>
 

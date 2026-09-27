@@ -14,7 +14,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="flex items-center gap-2 glass-pill px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full mb-5 sm:mb-6 border border-white/[0.15] shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
+            className="flex items-center gap-2 glass-pill px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full mb-5 sm:mb-6 border border-white/[0.12]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]" />
             <span className="font-mono text-[10px] sm:text-[11px] text-[#e5e7eb] tracking-widest uppercase">
@@ -22,12 +22,12 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* High-Impact Editorial Serif Headline with Localized Drop-Shadow */}
+          {/* High-Impact Editorial Serif Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl lg:text-[3.65rem] xl:text-[4rem] font-serif leading-[1.08] sm:leading-[1.06] tracking-tight text-white mb-5 sm:mb-6 drop-shadow-[0_2px_4px_rgba(0,0,0,0.95)] drop-shadow-[0_8px_28px_rgba(0,0,0,0.85)]"
+            className="text-3xl sm:text-5xl lg:text-[3.65rem] xl:text-[4rem] font-serif leading-[1.08] sm:leading-[1.06] tracking-tight text-white mb-5 sm:mb-6 drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)] [text-shadow:_0_2px_24px_rgba(0,0,0,0.85)]"
           >
             Engineering curiosity <br />
             into{" "}
@@ -38,14 +38,14 @@ export default function Hero() {
             actually rely on.
           </motion.h1>
 
-          {/* Subtitle / Bio Narrative with Localized Drop-Shadow */}
+          {/* Subtitle / Bio Narrative */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xs sm:text-base text-[#f3f4f6] leading-relaxed max-w-[46ch] mb-6 sm:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
+            className="text-xs sm:text-base text-[#d1d5db] leading-relaxed max-w-[46ch] mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
           >
-            I&apos;m <span className="text-white font-medium">Guruprasadh R</span>, a developer and CS student at Anna University building dependable, high-throughput digital systems — from operating system internals in Celtrix OS to scalable full-stack cloud applications.
+            {/* I&apos;m <span className="text-white font-medium">Guruprasadh R</span>, a developer and CS student at Vels University building dependable, high-throughput digital systems — from operating system internals to scalable full-stack cloud applications. */}
           </motion.p>
 
           {/* Tactile Actions Cluster */}
@@ -67,7 +67,7 @@ export default function Hero() {
 
             <a
               href="#about"
-              className="glass-panel px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium text-white hover:text-[#fbbf24] hover:border-[#f59e0b]/40 transition-all tactile-btn border border-white/[0.15] shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
+              className="glass-panel px-4 sm:px-5 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-medium text-white hover:text-[#fbbf24] hover:border-[#f59e0b]/40 transition-all tactile-btn border border-white/[0.12]"
             >
               <span>About My Journey</span>
             </a>
@@ -86,22 +86,22 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="hidden sm:flex flex-col items-end gap-2.5"
           >
-            <div className="font-mono text-[11px] text-[#fef3c7] italic tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <div className="font-mono text-[11px] text-[#fef3c7]/80 italic tracking-wide">
               Architecting with craft &bull; Scaling with discipline ~
             </div>
 
-            <div className="glass-panel px-4 py-3 rounded-2xl border border-white/[0.15] flex flex-col gap-2 font-mono text-xs shadow-[0_10px_25px_rgba(0,0,0,0.5)]">
+            <div className="glass-panel px-4 py-3 rounded-2xl border border-white/[0.1] flex flex-col gap-2 font-mono text-xs shadow-[0_10px_25px_rgba(0,0,0,0.4)]">
               <div className="flex items-center gap-3 text-[#fbbf24]">
                 <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_10px_#f59e0b] animate-pulse" />
                 <span className="font-bold">01 / Architect</span>
               </div>
-              <div className="flex items-center gap-3 text-[#d1d5db] pl-5">
+              <div className="flex items-center gap-3 text-[#9ca3af] pl-5">
                 <span>02 / Build</span>
               </div>
-              <div className="flex items-center gap-3 text-[#d1d5db] pl-5">
+              <div className="flex items-center gap-3 text-[#9ca3af] pl-5">
                 <span>03 / Refine</span>
               </div>
-              <div className="flex items-center gap-3 text-[#d1d5db] pl-5">
+              <div className="flex items-center gap-3 text-[#9ca3af] pl-5">
                 <span>04 / Scale</span>
               </div>
             </div>
@@ -112,14 +112,14 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full glass-panel-amber rounded-2xl p-3.5 sm:p-5 shadow-[0_20px_45px_rgba(0,0,0,0.6)] backdrop-blur-xl border border-[#f59e0b]/30"
+            className="w-full glass-panel-amber rounded-2xl p-3.5 sm:p-5 shadow-[0_20px_45px_rgba(0,0,0,0.6)] backdrop-blur-xl border border-[#f59e0b]/25"
           >
             {/* Terminal Header */}
-            <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/[0.1]">
+            <div className="flex items-center justify-between pb-2 mb-2 border-b border-white/[0.08]">
               <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+                <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                <span className="w-2 h-2 rounded-full bg-yellow-500/80" />
+                <span className="w-2 h-2 rounded-full bg-green-500/80" />
               </div>
               <span className="font-mono text-[9px] sm:text-[10px] text-[#9ca3af] tracking-tight">
                 ~/guruprasadh/sysinfo
@@ -127,18 +127,18 @@ export default function Hero() {
             </div>
 
             {/* Terminal Lines */}
-            <div className="font-mono text-[11px] sm:text-xs flex flex-col gap-1 sm:gap-1.5 text-[#e5e7eb]">
+            <div className="font-mono text-[11px] sm:text-xs flex flex-col gap-1 sm:gap-1.5 text-[#d1d5db]">
               <div className="text-[#fbbf24]">
                 &gt; Passion for solving hard engineering problems
               </div>
-              <div className="text-white/90">
+              <div className="text-white/80">
                 &gt; Clean code. High throughput. Real impact.
               </div>
-              <div className="text-[#cbd5e1]">
-                &gt; Co-maintainer @ celtrix-os / kernel
+              <div className="text-[#a1a1aa]">
+                {/* &gt; Co-maintainer @ celtrix */}
               </div>
               <div className="text-[#9ca3af]">
-                &gt; CS Undergrad @ Anna University
+                &gt; CS Undergrad @ Vels University
               </div>
               <div className="flex items-center gap-1 text-[#f59e0b] pt-0.5">
                 <span>&gt; Always learning</span>
@@ -156,14 +156,14 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="flex flex-col items-center justify-center gap-1.5 pt-3 pb-1 pointer-events-none"
       >
-        <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-[#f59e0b]/50 flex justify-center pt-1 sm:pt-1.5 bg-[#0b0e14]/50 backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+        <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-[#f59e0b]/40 flex justify-center pt-1 sm:pt-1.5 bg-[#0b0e14]/40 backdrop-blur-sm">
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="w-1 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]"
+            className="w-1 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_#f59e0b]"
           />
         </div>
-        <span className="font-mono text-[9px] sm:text-[10px] text-[#e5e7eb] tracking-widest uppercase drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
+        <span className="font-mono text-[9px] sm:text-[10px] text-[#9ca3af] tracking-widest uppercase">
           Scroll to explore
         </span>
       </motion.div>

@@ -37,19 +37,22 @@ export default function Home() {
 
   return (
     <div className="min-h-[100dvh] bg-transparent text-[#fafafa] relative selection:bg-[#f59e0b]/30 selection:text-white">
-      {/* 100% Pure, Vibrant, Seamless Dual-Layer Video Background */}
+      {/* Seamless Dual-Layer Video Background Engine */}
       <BackgroundVideo />
+
+      {/* Subtle Analog Grain Overlay */}
+      <div className="grain-overlay" />
 
       {/* Atmospheric Navigation Bar */}
       <Navbar />
 
       {/* Main Narrative Flow */}
       <main className="relative z-10 flex flex-col">
-        {/* Full Viewport 100% Unfiltered Video-Integrated Hero */}
+        {/* Full Viewport Video-Integrated Hero */}
         <Hero />
 
-        {/* Subsequent Sections Transition Layer (Begins Only on Scroll) */}
-        <div className="relative bg-gradient-to-b from-transparent via-[#0b0e14]/70 to-[#0b0e14]">
+        {/* In-Depth Portfolio Sections */}
+        <div className="relative">
           <About />
           <Projects />
           <Skills />

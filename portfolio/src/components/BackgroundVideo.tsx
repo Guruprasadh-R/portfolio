@@ -106,7 +106,7 @@ export default function BackgroundVideo() {
 
   return (
     <div
-      className="fixed inset-0 w-full h-full -z-10 pointer-events-none overflow-hidden"
+      className="fixed inset-0 w-full h-full -z-10 pointer-events-none overflow-hidden bg-[#0a0d12]"
       aria-hidden="true"
     >
       {/* Fallback poster for instantaneous render before decode */}
@@ -116,7 +116,7 @@ export default function BackgroundVideo() {
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
 
-      {/* Primary Video Layer A - 100% natural, vibrant, zero dark tint */}
+      {/* Primary Video Layer A */}
       <video
         ref={videoRefA}
         src="/bg-animation.mp4"
@@ -129,7 +129,7 @@ export default function BackgroundVideo() {
         style={{ willChange: "opacity" }}
       />
 
-      {/* Overlapping Video Layer B (Crossfade Twin) - 100% natural, vibrant, zero dark tint */}
+      {/* Overlapping Video Layer B (Crossfade Twin) */}
       <video
         ref={videoRefB}
         src="/bg-animation.mp4"

@@ -20,8 +20,8 @@ export default function About() {
           <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
         </svg>
       ),
-      value: "Full Stack & C",
-      label: "Architecture to Metal",
+      value: "Full Stack development",
+      label: "Idea to Product",
     },
     {
       icon: (
@@ -30,7 +30,7 @@ export default function About() {
           <path d="M6 12v5c3 3 9 3 12 0v-5" />
         </svg>
       ),
-      value: "Anna University",
+      value: "Vels University",
       label: "CS Engineering",
     },
     {
@@ -58,7 +58,7 @@ export default function About() {
         {/* Top Split: Section Headline & Narrative */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-16">
           <div className="lg:col-span-7">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-[1.15]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-[1.15] drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
               Crafting systems that{" "}
               <span className="text-gold-gradient font-serif italic">
                 make fundamental sense.
@@ -66,12 +66,14 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="lg:col-span-5 text-sm sm:text-base text-[#d1d5db] leading-relaxed flex flex-col gap-4">
+          <div className="lg:col-span-5 text-sm sm:text-base text-[#e5e7eb] leading-relaxed flex flex-col gap-4 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
             <p>
-              I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Anna University based in Chennai, India. My work bridges distributed web platforms with operating system internals.
+              I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Vels University based in Chennai, India. My work bridges distributed web platforms with operating system internals.
             </p>
             <p>
-              I believe that resilient software requires both micro-architectural empathy and uncompromising user experience polish. Whether orchestrating transactional state in PostgreSQL or authoring low-level C utilities as a co-maintainer of Celtrix OS, I engineer software that executes predictably under pressure.
+              
+
+I focus on creating scalable, well-structured software with an emphasis on both solid engineering and thoughtful user experiences. From backend systems and APIs to modern frontend applications, I aim to build software that is reliable, practical, and built to perform.
             </p>
           </div>
         </div>
@@ -109,7 +111,7 @@ export default function About() {
                 <span className="font-mono text-[10px] text-[#f59e0b] tracking-wider uppercase bg-[#f59e0b]/10 px-2 py-0.5 rounded">
                   UNDERGRADUATE
                 </span>
-                <span className="font-mono text-xs text-[#71717a]">2023 - 2027</span>
+                <span className="font-mono text-xs text-[#71717a]">2024 - 2028</span>
               </div>
               <h3 className="text-lg font-bold text-white mb-2">
                 Computer Science &amp; Engineering
@@ -119,7 +121,7 @@ export default function About() {
               </p>
             </div>
             <div className="font-mono text-xs text-[#fbbf24] pt-3 border-t border-white/[0.06]">
-              Anna University &bull; Chennai
+              Vels University &bull; Chennai
             </div>
           </div>
 
@@ -136,7 +138,7 @@ export default function About() {
                 Celtrix Operating System
               </h3>
               <p className="text-xs sm:text-sm text-[#9ca3af] leading-relaxed mb-4">
-                Core contributor driving architectural code reviews, kernel memory paging routines, and Unix-like systems utilities implemented in modern C.
+                Core contributor driving architectural code reviews, kernel memory paging routines, and Unix-like systems utilities implemented.
               </p>
             </div>
             <a
