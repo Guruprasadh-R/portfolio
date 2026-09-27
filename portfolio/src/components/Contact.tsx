@@ -1,10 +1,12 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -13,7 +15,7 @@ export default function Contact() {
     message: "",
   });
 
-  const emailAddress = "guruprasadh.raghavan@gmail.com";
+  const emailAddress = "guruprasadhraghavan@gmail.com";
 
   const handleCopyEmail = async () => {
     try {
@@ -27,12 +29,68 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (status === "submitting") return;
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setStatus("error");
+      setErrorMessage("Please complete all required fields (Name, Email, Message).");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email.trim())) {
+      setStatus("error");
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
 
     setStatus("submitting");
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setStatus("success");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setErrorMessage("");
+
+    try {
+      console.log("[Contact] Sending transmission to /api/contact...", {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        subject: formData.subject.trim(),
+      });
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          honeypot,
+        }),
+      });
+
+      const result = await response.json().catch(() => ({}));
+      console.log("[Contact] Received response:", response.status, result);
+
+      if (!response.ok) {
+        throw new Error(result.error || `Server responded with status ${response.status}`);
+      }
+
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setHoneypot("");
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, 8000);
+    } catch (err: unknown) {
+      console.error("[Contact] Dispatch error:", err);
+      setStatus("error");
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Failed to dispatch message. Please try again or reach out directly.";
+      setErrorMessage(message);
+    }
   };
 
   return (
@@ -159,6 +217,18 @@ export default function Contact() {
             </div>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+              {/* Spam honeypot field (hidden from real users) */}
+              <input
+                type="text"
+                name="honeypot"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {/* Name */}
                 <div className="flex flex-col gap-2">
@@ -169,10 +239,11 @@ export default function Contact() {
                     id="contact-name"
                     required
                     type="text"
+                    disabled={status === "submitting"}
                     placeholder="e.g. Alex Morgan"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors disabled:opacity-60"
                   />
                 </div>
 
@@ -185,10 +256,11 @@ export default function Contact() {
                     id="contact-email"
                     required
                     type="email"
+                    disabled={status === "submitting"}
                     placeholder="alex@domain.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                    onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                    className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors disabled:opacity-60"
                   />
                 </div>
               </div>
@@ -201,10 +273,11 @@ export default function Contact() {
                 <input
                   id="contact-subject"
                   type="text"
+                  disabled={status === "submitting"}
                   placeholder="Software Engineering Opportunity / Project Architecture"
                   value={formData.subject}
-                  onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors"
+                  onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                  className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors disabled:opacity-60"
                 />
               </div>
 
@@ -217,22 +290,60 @@ export default function Contact() {
                   id="contact-message"
                   required
                   rows={4}
+                  disabled={status === "submitting"}
                   placeholder="Briefly describe your team, timeline, or engineering problem..."
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none"
+                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                  className="bg-[#0b0e14]/80 border border-white/[0.08] focus:border-[#f59e0b] text-white rounded-xl px-4 py-3 text-sm outline-none transition-colors resize-none disabled:opacity-60"
                 />
               </div>
 
+              {/* Status Notifications */}
+              {status === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/25 text-red-200 text-xs flex items-start gap-2.5 font-mono"
+                >
+                  <svg className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                    <line x1="12" y1="8" x2="12" strokeWidth="2" strokeLinecap="round" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                  <span className="leading-relaxed">
+                    {errorMessage || "Failed to transmit message. Please try again or reach out directly via email."}
+                  </span>
+                </motion.div>
+              )}
+
+              {status === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-200 text-xs flex items-center gap-2.5 font-mono"
+                >
+                  <svg className="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span className="leading-relaxed">
+                    Message dispatched to guruprasadhraghavan@gmail.com. I will reply to your email shortly.
+                  </span>
+                </motion.div>
+              )}
+
               {/* Submit Button */}
               <motion.button
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.98 }}
+                whileHover={{ scale: status === "submitting" ? 1 : 1.01 }}
+                whileTap={{ scale: status === "submitting" ? 1 : 0.98 }}
                 type="submit"
                 disabled={status === "submitting"}
                 className={`w-full py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase transition-all duration-200 tactile-btn flex items-center justify-center gap-2 ${
-                  status === "success"
+                  status === "submitting"
+                    ? "bg-[#f59e0b]/50 text-[#0b0e14] cursor-not-allowed"
+                    : status === "success"
                     ? "bg-emerald-500 text-white"
+                    : status === "error"
+                    ? "bg-gradient-to-r from-[#fbbf24] to-[#f59e0b] hover:from-[#f59e0b] hover:to-[#d97706] text-[#0b0e14] shadow-[0_0_25px_rgba(245,158,11,0.25)]"
                     : "bg-gradient-to-r from-[#fbbf24] to-[#f59e0b] hover:from-[#f59e0b] hover:to-[#d97706] text-[#0b0e14] shadow-[0_0_25px_rgba(245,158,11,0.25)]"
                 }`}
               >
@@ -244,7 +355,7 @@ export default function Contact() {
                 )}
                 {status === "submitting" && (
                   <span className="flex items-center gap-2 font-mono">
-                    <span className="w-3 h-3 rounded-full border-2 border-[#0b0e14] border-t-transparent animate-spin" />
+                    <span className="w-3.5 h-3.5 rounded-full border-2 border-[#0b0e14] border-t-transparent animate-spin" />
                     Transmitting...
                   </span>
                 )}
@@ -254,6 +365,12 @@ export default function Contact() {
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                     Message Dispatched Successfully
+                  </span>
+                )}
+                {status === "error" && (
+                  <span className="flex items-center gap-2 font-mono">
+                    <span>Retry Transmission</span>
+                    <span className="text-xs">&rarr;</span>
                   </span>
                 )}
               </motion.button>
