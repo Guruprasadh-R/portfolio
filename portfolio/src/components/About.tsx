@@ -71,9 +71,7 @@ export default function About() {
               I am <span className="text-white font-medium">Guruprasadh R</span>, a software engineer and Computer Science student at Vels University based in Chennai, India. My work bridges distributed web platforms with operating system internals.
             </p>
             <p>
-              
-
-I focus on creating scalable, well-structured software with an emphasis on both solid engineering and thoughtful user experiences. From backend systems and APIs to modern frontend applications, I aim to build software that is reliable, practical, and built to perform.
+              I focus on creating scalable, well-structured software with an emphasis on both solid engineering and thoughtful user experiences. From backend systems and APIs to modern frontend applications, I aim to build software that is reliable, practical, and built to perform.
             </p>
           </div>
         </div>

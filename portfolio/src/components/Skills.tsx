@@ -83,7 +83,7 @@ export default function Skills() {
         </div>
 
         {/* Section Headline */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif text-white tracking-tight leading-tight drop-shadow-[0_2px_16px_rgba(0,0,0,0.85)]">
               Architectural{" "}

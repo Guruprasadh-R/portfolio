@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Lenis from "lenis";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import Navbar from "@/components/Navbar";
@@ -13,6 +14,28 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   const lenisRef = useRef<Lenis | null>(null);
+  const { scrollY } = useScroll();
+  const [viewportHeight, setViewportHeight] = useState(900);
+
+  // Measure viewport height dynamically for responsive scroll calibration
+  useEffect(() => {
+    setViewportHeight(window.innerHeight || 900);
+    const handleResize = () => setViewportHeight(window.innerHeight || 900);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Smooth progressive background dimming linked directly to scroll position:
+  // - At 0 (Top of Hero): 0% overlay (100% vibrant, full brightness, pure video)
+  // - User starts scrolling (18% of hero): very subtle tint begins (0.08)
+  // - Halfway down hero (50%): video becomes progressively softer (0.45)
+  // - Exiting hero (85%): transition deepens (0.82)
+  // - Content sections (105%+): mostly/fully opaque background (0.95) for maximum content focus
+  const bgOverlayOpacity = useTransform(
+    scrollY,
+    [0, viewportHeight * 0.18, viewportHeight * 0.5, viewportHeight * 0.85, viewportHeight * 1.05],
+    [0, 0.08, 0.45, 0.82, 0.95]
+  );
 
   // Smooth inertial scrolling with Lenis
   useEffect(() => {
@@ -37,8 +60,15 @@ export default function Home() {
 
   return (
     <div className="min-h-[100dvh] bg-transparent text-[#fafafa] relative selection:bg-[#f59e0b]/30 selection:text-white">
-      {/* Seamless Dual-Layer Video Background Engine */}
+      {/* Seamless Dual-Layer Video Background Engine (Fixed -z-10) */}
       <BackgroundVideo />
+
+      {/* Dynamic Smooth Scroll-Driven Video Fade Layer (-z-[5]) */}
+      <motion.div
+        style={{ opacity: bgOverlayOpacity }}
+        className="fixed inset-0 w-full h-full -z-[5] pointer-events-none bg-[#0b0e14]"
+        aria-hidden="true"
+      />
 
       {/* Subtle Analog Grain Overlay */}
       <div className="grain-overlay" />
