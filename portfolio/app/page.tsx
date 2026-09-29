@@ -26,15 +26,14 @@ export default function Home() {
   }, []);
 
   // Smooth progressive background dimming linked directly to scroll position:
-  // - At 0 (Top of Hero): 0% overlay (100% vibrant, full brightness, pure video)
-  // - User starts scrolling (18% of hero): very subtle tint begins (0.08)
-  // - Halfway down hero (50%): video becomes progressively softer (0.45)
-  // - Exiting hero (85%): transition deepens (0.82)
-  // - Content sections (105%+): mostly/fully opaque background (0.95) for maximum content focus
+  // - Top of Hero (0 to 25% scroll): pure vibrant video with minimal overlay (0 to 0.04)
+  // - Mid Hero (55%): gentle progressive softening (0.35)
+  // - Exiting Hero (88%): smooth darkening transition (0.76)
+  // - Content sections (110%+): opaque background (0.94) for clean content readability
   const bgOverlayOpacity = useTransform(
     scrollY,
-    [0, viewportHeight * 0.18, viewportHeight * 0.5, viewportHeight * 0.85, viewportHeight * 1.05],
-    [0, 0.08, 0.45, 0.82, 0.95]
+    [0, viewportHeight * 0.25, viewportHeight * 0.55, viewportHeight * 0.88, viewportHeight * 1.1],
+    [0, 0.04, 0.35, 0.76, 0.94]
   );
 
   // Smooth inertial scrolling with Lenis
@@ -77,7 +76,7 @@ export default function Home() {
       <Navbar />
 
       {/* Main Narrative Flow */}
-      <main className="relative z-10 flex flex-col">
+      <main className="relative z-10 flex flex-col [&_section:first-child>div:last-child:not(:first-child)]:hidden">
         {/* Full Viewport Video-Integrated Hero */}
         <Hero />
 

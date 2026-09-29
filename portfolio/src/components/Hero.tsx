@@ -7,8 +7,8 @@ export default function Hero() {
     <section className="relative min-h-[100dvh] pt-20 sm:pt-28 pb-8 sm:pb-10 px-4 sm:px-8 max-w-7xl mx-auto flex flex-col justify-between">
       {/* 12-Column Grid with Center Breathing Room for the Cliff Developer */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start my-auto pt-4 sm:pt-6">
-        {/* Left Column (Cols 1-5): Editorial Typography & Direct Actions */}
-        <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-start z-10">
+        {/* Left Column (Cols 1-6): Editorial Typography & Direct Actions */}
+        <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-start z-10">
           {/* Overline Kicker Badge */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -18,7 +18,7 @@ export default function Hero() {
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b]" />
             <span className="font-mono text-[10px] sm:text-[11px] text-[#e5e7eb] tracking-widest uppercase">
-              IDEAS &bull; CODE &bull; SYSTEMS
+              FULL-STACK DEVELOPER &bull; SYSTEMS &bull; WEB
             </span>
           </motion.div>
 
@@ -27,11 +27,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl lg:text-[3.65rem] xl:text-[4rem] font-serif leading-[1.08] sm:leading-[1.06] tracking-tight text-white mb-5 sm:mb-6 drop-shadow-[0_4px_30px_rgba(0,0,0,0.85)] [text-shadow:_0_2px_24px_rgba(0,0,0,0.85)]"
+            className="text-3xl sm:text-5xl lg:text-[3.5rem] xl:text-[3.85rem] font-serif leading-[1.1] sm:leading-[1.06] tracking-tight text-white mb-5 sm:mb-6 drop-shadow-[0_2px_18px_rgba(0,0,0,0.7)]"
           >
-            Engineering curiosity <br />
-            into{" "}
-            <span className="text-gold-gradient font-serif italic font-normal">
+            Engineering <br className="hidden sm:inline" />
+            curiosity into <br />
+            <span className="text-gold-gradient font-serif italic font-normal inline-block">
               products people
             </span>{" "}
             <br />
@@ -43,9 +43,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-xs sm:text-base text-[#d1d5db] leading-relaxed max-w-[46ch] mb-6 sm:mb-8 drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]"
+            className="text-xs sm:text-base text-[#d1d5db] leading-relaxed max-w-[46ch] mb-6 sm:mb-8 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]"
           >
-            {/* I&apos;m <span className="text-white font-medium">Guruprasadh R</span>, a developer and CS student at Vels University building dependable, high-throughput digital systems — from operating system internals to scalable full-stack cloud applications. */}
+            Full-stack developer building dependable web applications and systems with React, Next.js, and Node.js.
           </motion.p>
 
           {/* Tactile Actions Cluster */}
@@ -74,8 +74,8 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Center Buffer Space (Cols 6-8): Intentionally Open to Showcase Cliff & Developer */}
-        <div className="hidden lg:block lg:col-span-3 pointer-events-none" aria-hidden="true" />
+        {/* Center Buffer Space (Cols 7-8): Intentionally Open to Showcase Cliff & Developer */}
+        <div className="hidden lg:block lg:col-span-2 pointer-events-none" aria-hidden="true" />
 
         {/* Right Column (Cols 9-12): Flight Progression & Telemetry Terminal on Far Right */}
         <div className="lg:col-span-4 flex flex-col gap-4 sm:gap-6 items-end z-10 w-full lg:w-auto">
@@ -84,24 +84,24 @@ export default function Hero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden sm:flex flex-col items-end gap-2.5"
+            className="hidden sm:flex flex-col items-end gap-2 opacity-85 hover:opacity-100 transition-opacity"
           >
-            <div className="font-mono text-[11px] text-[#fef3c7]/80 italic tracking-wide">
+            <div className="font-mono text-[10px] text-[#fef3c7]/60 italic tracking-wide">
               Architecting with craft &bull; Scaling with discipline ~
             </div>
 
-            <div className="glass-panel px-4 py-3 rounded-2xl border border-white/[0.1] flex flex-col gap-2 font-mono text-xs shadow-[0_10px_25px_rgba(0,0,0,0.4)]">
-              <div className="flex items-center gap-3 text-[#fbbf24]">
-                <span className="w-2 h-2 rounded-full bg-[#f59e0b] shadow-[0_0_10px_#f59e0b] animate-pulse" />
-                <span className="font-bold">01 / Architect</span>
+            <div className="bg-[#0b0e14]/40 backdrop-blur-md px-3.5 py-2.5 rounded-2xl border border-white/[0.07] flex flex-col gap-1.5 font-mono text-[11px] shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
+              <div className="flex items-center gap-2.5 text-[#fbbf24]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_8px_#f59e0b] animate-pulse" />
+                <span className="font-medium">01 / Architect</span>
               </div>
-              <div className="flex items-center gap-3 text-[#9ca3af] pl-5">
+              <div className="flex items-center gap-2.5 text-[#9ca3af]/70 pl-4">
                 <span>02 / Build</span>
               </div>
-              <div className="flex items-center gap-3 text-[#9ca3af] pl-5">
+              <div className="flex items-center gap-2.5 text-[#9ca3af]/70 pl-4">
                 <span>03 / Refine</span>
               </div>
-              <div className="flex items-center gap-3 text-[#9ca3af] pl-5">
+              <div className="flex items-center gap-2.5 text-[#9ca3af]/70 pl-4">
                 <span>04 / Scale</span>
               </div>
             </div>
@@ -129,44 +129,22 @@ export default function Hero() {
             {/* Terminal Lines */}
             <div className="font-mono text-[11px] sm:text-xs flex flex-col gap-1 sm:gap-1.5 text-[#d1d5db]">
               <div className="text-[#fbbf24]">
-                &gt; Passion for solving hard engineering problems
+                &gt; Full-stack developer &bull; React &bull; Next.js &bull; Node.js
               </div>
-              <div className="text-white/80">
-                &gt; Clean code. High throughput. Real impact.
-              </div>
-              <div className="text-[#a1a1aa]">
-                {/* &gt; Co-maintainer @ celtrix */}
+              <div className="text-white/85">
+                &gt; Clean architecture. High throughput. Real impact.
               </div>
               <div className="text-[#9ca3af]">
                 &gt; CS Undergrad @ Vels University
               </div>
               <div className="flex items-center gap-1 text-[#f59e0b] pt-0.5">
-                <span>&gt; Always learning</span>
+                <span>&gt; Always learning &amp; building</span>
                 <span className="w-1.5 h-3.5 bg-[#f59e0b] animate-pulse" />
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom Center: Minimalist "Scroll to Explore" Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="flex flex-col items-center justify-center gap-1.5 pt-3 pb-1 pointer-events-none"
-      >
-        <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-[#f59e0b]/40 flex justify-center pt-1 sm:pt-1.5 bg-[#0b0e14]/40 backdrop-blur-sm">
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="w-1 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_#f59e0b]"
-          />
-        </div>
-        <span className="font-mono text-[9px] sm:text-[10px] text-[#9ca3af] tracking-widest uppercase">
-          Scroll to explore
-        </span>
-      </motion.div>
     </section>
   );
 }

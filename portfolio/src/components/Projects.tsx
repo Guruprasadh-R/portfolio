@@ -4,7 +4,10 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32 px-4 sm:px-8 relative">
+    <section
+      id="projects"
+      className="py-24 md:py-32 px-4 sm:px-8 relative"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
@@ -33,13 +36,13 @@ export default function Projects() {
             <span className="text-gold-gradient font-serif italic">
               distributed cloud SaaS
             </span>{" "}
-            to kernel internals.
+            to modern web applications.
           </h2>
         </div>
 
         {/* Asymmetric Bento Showcase */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Project 1: RecycKart (7 cols) */}
+          {/* Project 1: RecycKart */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
@@ -52,46 +55,68 @@ export default function Projects() {
                   <span className="font-mono text-xs text-[#fbbf24] bg-[#f59e0b]/10 border border-[#f59e0b]/20 px-2.5 py-1 rounded-md">
                     01 &bull; E-COMMERCE PLATFORM
                   </span>
+
                   <span className="font-mono text-[11px] text-emerald-400 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     Production
                   </span>
                 </div>
-                <span className="font-mono text-xs text-[#71717a]">2024</span>
+
+                <span className="font-mono text-xs text-[#71717a]">
+                  2025
+                </span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-3 tracking-tight">
                 RecycKart
               </h3>
+
               <p className="text-sm sm:text-base text-[#d1d5db] leading-relaxed mb-6 max-w-xl">
-                A high-throughput e-commerce marketplace dedicated to sustainable goods. Engineered with end-to-end inventory synchronization, atomic transactional payment gateways, and a granular administrative management suite.
+                A marketplace for recycled products where users can buy
+                products and contribute recyclable materials.
               </p>
 
-              {/* Architectural Telemetry Box */}
+              {/* Project Information */}
               <div className="bg-[#0b0e14]/70 border border-white/[0.06] rounded-2xl p-4 sm:p-5 mb-6 backdrop-blur-md">
                 <div className="flex items-center justify-between text-[11px] font-mono text-[#71717a] border-b border-white/[0.06] pb-2.5 mb-3">
-                  <span>SUBSYSTEM</span>
-                  <span>STATUS &amp; SPECIFICATION</span>
+                  <span>PROJECT INFO</span>
+                  <span>DETAILS</span>
                 </div>
-                <div className="space-y-2 font-mono text-xs">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#9ca3af]">Inventory State</span>
-                    <span className="text-emerald-400">Real-time / WebSocket Sync</span>
+
+                <div className="space-y-2.5 font-mono text-xs">
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">Platform</span>
+                    <span className="text-white text-right">
+                      Recycled Products Marketplace
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#9ca3af]">Payment Gateway</span>
-                    <span className="text-white">Atomic Transaction Pipelines</span>
+
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">User Flow</span>
+                    <span className="text-white text-right">
+                      Buyers &amp; Sellers
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#9ca3af]">Data Layer</span>
-                    <span className="text-[#fbbf24]">MongoDB Replica Set</span>
+
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">Contribution</span>
+                    <span className="text-[#fbbf24] text-right">
+                      Recyclable Materials
+                    </span>
                   </div>
                 </div>
               </div>
 
-              {/* Tech Stack Pills */}
+              {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-8 font-mono text-xs">
-                {["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "REST API"].map((tech) => (
+                {[
+                  "React.js",
+                  "Node.js",
+                  "Express.js",
+                  "MongoDB",
+                  "REST APIs",
+                  "Postman",
+                ].map((tech) => (
                   <span
                     key={tech}
                     className="px-3 py-1 rounded-lg bg-white/[0.04] text-[#e5e7eb] border border-white/[0.06]"
@@ -120,7 +145,12 @@ export default function Projects() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 glass-pill px-4 py-2.5 rounded-xl text-xs font-medium text-white hover:text-[#fbbf24] transition-colors tactile-btn border border-white/[0.08]"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
                 <span>Source Code</span>
@@ -128,7 +158,7 @@ export default function Projects() {
             </div>
           </motion.div>
 
-          {/* Project 2: Manage Your SaaS (5 cols) */}
+          {/* Project 2: Manage Your SaaS */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
@@ -140,41 +170,71 @@ export default function Projects() {
                 <span className="font-mono text-xs text-[#d1d5db] bg-white/[0.05] border border-white/[0.08] px-2.5 py-1 rounded-md">
                   02 &bull; SAAS PLATFORM
                 </span>
-                <span className="font-mono text-xs text-[#71717a]">2024</span>
+
+                <span className="font-mono text-xs text-[#71717a]">
+                  2025–PRESENT
+                </span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-3 tracking-tight">
                 Manage Your SaaS
               </h3>
+
               <p className="text-sm text-[#d1d5db] leading-relaxed mb-6">
-                Centralized subscription governance and billing analytics engine. Enables software companies to orchestrate multi-tenant workspaces, track recurring billing metrics, and manage user seats.
+                Co-built a scalable MicroSaaS with secure OAuth integrations
+                for Google Analytics, Search Console, and Dodo payments,
+                collaborating closely with founders.
               </p>
 
-              {/* Data Metric Simulator */}
+              {/* Data Sources */}
               <div className="bg-[#0b0e14]/70 border border-white/[0.06] rounded-2xl p-4 sm:p-5 mb-6 backdrop-blur-md">
                 <div className="flex items-center justify-between text-[11px] font-mono text-[#71717a] border-b border-white/[0.06] pb-2 mb-3">
-                  <span>METRIC</span>
-                  <span>BENCHMARK</span>
+                  <span>DATA SOURCES</span>
+                  <span>INSIGHTS</span>
                 </div>
+
                 <div className="space-y-2.5 font-mono text-xs">
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#9ca3af]">Query Latency</span>
-                    <span className="text-emerald-400">14ms (PostgreSQL)</span>
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">Traffic</span>
+                    <span className="text-emerald-400 text-right">
+                      Google Analytics
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#9ca3af]">Multi-Tenancy</span>
-                    <span className="text-white">Row-Level Security</span>
+
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">SEO</span>
+                    <span className="text-white text-right">
+                      Search Console
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-[#9ca3af]">Architecture</span>
-                    <span className="text-[#fbbf24]">App Router SSR</span>
+
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">Revenue</span>
+                    <span className="text-white text-right">
+                      Payment Data
+                    </span>
+                  </div>
+
+                  <div className="flex justify-between items-center gap-4">
+                    <span className="text-[#9ca3af]">Reporting</span>
+                    <span className="text-[#fbbf24] text-right">
+                      Real-time + Historical
+                    </span>
                   </div>
                 </div>
               </div>
 
-              {/* Tech Stack Pills */}
+              {/* Tech Stack */}
               <div className="flex flex-wrap gap-2 mb-8 font-mono text-xs">
-                {["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Prisma"].map((tech) => (
+                {[
+                  "Next.js",
+                  "React",
+                  "TypeScript",
+                  "Tailwind CSS",
+                  "Supabase",
+                  "Chart.js",
+                  "Recharts",
+                ].map((tech) => (
                   <span
                     key={tech}
                     className="px-2.5 py-1 rounded-lg bg-white/[0.04] text-[#e5e7eb] border border-white/[0.06]"
@@ -203,7 +263,12 @@ export default function Projects() {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 glass-pill px-4 py-2.5 rounded-xl text-xs font-medium text-white hover:text-[#fbbf24] transition-colors tactile-btn border border-white/[0.08]"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
                 <span>Code</span>
@@ -211,7 +276,7 @@ export default function Projects() {
             </div>
           </motion.div>
 
-          {/* Project 3: Celtrix OS Spotlight (12 cols) */}
+          {/* Project 3: Celtrix */}
           <motion.div
             whileHover={{ y: -4 }}
             transition={{ type: "spring", stiffness: 120, damping: 20 }}
@@ -223,23 +288,34 @@ export default function Projects() {
                 <div className="flex flex-wrap items-center gap-3">
                   <span className="font-mono text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    OPEN-SOURCE STEWARDSHIP
+                    OPEN-SOURCE
                   </span>
+
                   <span className="font-mono text-xs text-[#fbbf24] bg-[#f59e0b]/10 border border-[#f59e0b]/20 px-3 py-1 rounded-full">
                     Contributor &amp; Co-maintainer
                   </span>
                 </div>
 
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-white tracking-tight">
-                  Celtrix Operating System
+                  Celtrix
                 </h3>
 
                 <p className="text-sm sm:text-base text-[#d1d5db] leading-relaxed max-w-2xl">
-                  An open-source operating system project exploring modern Unix principles, low-level concurrency, and micro-kernel design. As co-maintainer, I actively conduct code reviews, refine kernel architecture, and implement low-level C routines and systems utilities.
+                  Celtrix is a modern web-app scaffolder that sets up
+                  full-stack web applications in seconds with preferred
+                  technologies and configurable stack options.
                 </p>
 
+                {/* Tags */}
                 <div className="flex flex-wrap gap-2 pt-2 font-mono text-xs">
-                  {["C Systems Programming", "OS Architecture", "Kernel Primitives", "POSIX Standards", "Git Workflow", "Open Source Stewardship"].map((tag) => (
+                  {[
+                    "Web App Scaffolding",
+                    "Preset Stacks",
+                    "Custom Stack Wizard",
+                    "Node.js",
+                    "React",
+                    "Open Source",
+                  ].map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 rounded-lg bg-white/[0.04] text-[#e5e7eb] border border-white/[0.06]"
@@ -249,23 +325,38 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="pt-4 flex items-center gap-4">
+                {/* Actions */}
+                <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://celtrix.tech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#fbbf24] to-[#f59e0b] hover:from-[#f59e0b] hover:to-[#d97706] text-[#0b0e14] px-5 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all tactile-btn shadow-[0_0_20px_rgba(245,158,11,0.25)]"
+                  >
+                    <span>Live Site</span>
+                    <span className="text-xs">&rarr;</span>
+                  </a>
+
                   <a
                     href="https://github.com/celtrix-os/Celtrix"
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 bg-[#fef3c7] hover:bg-white text-[#0b0e14] px-5 py-2.5 rounded-xl text-xs font-semibold tracking-tight transition-all tactile-btn shadow-[0_0_20px_rgba(254,243,199,0.25)]"
+                    className="inline-flex items-center gap-2 glass-pill px-5 py-2.5 rounded-xl text-xs font-medium text-white hover:text-[#fbbf24] transition-colors tactile-btn border border-white/[0.08]"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
                       <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                     </svg>
-                    <span>Inspect Celtrix Repository</span>
-                    <span className="text-xs">&rarr;</span>
+                    <span>GitHub</span>
                   </a>
                 </div>
               </div>
 
-              {/* Right Systems Terminal Mockup */}
+              {/* Right Terminal Mockup */}
               <div className="lg:col-span-5 bg-[#0b0e14]/90 rounded-2xl border border-white/[0.08] p-5 font-mono text-xs overflow-hidden backdrop-blur-lg">
                 <div className="flex items-center justify-between pb-3 mb-3 border-b border-white/[0.06] text-[#71717a]">
                   <div className="flex items-center gap-1.5">
@@ -273,28 +364,39 @@ export default function Projects() {
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                   </div>
-                  <span className="text-[10px]">celtrix-kernel / git log</span>
+
+                  <span className="text-[10px]">
+                    celtrix / terminal
+                  </span>
                 </div>
 
                 <div className="space-y-2 text-[#d1d5db]">
                   <div className="text-emerald-400">
-                    $ git log -n 1 --stat
+                    $ npx celtrix my-app
                   </div>
+
                   <div className="text-white/90">
-                    commit b4f819a (HEAD -&gt; main, origin/main)
+                    Choose your stack:
                   </div>
-                  <div className="text-[#9ca3af]">
-                    Author: Guruprasadh R &lt;guruprasadh.raghavan@gmail.com&gt;
+
+                  <div className="text-[#9ca3af] pl-3">
+                    &gt; MERN
                   </div>
-                  <div className="text-[#fef3c7] pt-1">
-                    refactor(memory): streamline paging tables &amp; ISR interrupts
+
+                  <div className="text-[#9ca3af] pl-3">
+                    &nbsp;&nbsp;Next.js
                   </div>
-                  <div className="text-[#9ca3af] text-[11px] pt-1">
-                    4 files changed, 142 insertions(+), 38 deletions(-)
+
+                  <div className="text-[#fef3c7] pl-3">
+                    &nbsp;&nbsp;Custom Stack
                   </div>
-                  <div className="pt-2 text-emerald-400/90 text-[11px] flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                    <span>Kernel build status: PASS (0 errors, 0 warnings)</span>
+
+                  <div className="text-emerald-400 pt-1">
+                    ✓ Full-stack application scaffolded.
+                  </div>
+
+                  <div className="text-[#71717a] text-[11px] pt-1">
+                    Ready for development.
                   </div>
                 </div>
               </div>

@@ -84,7 +84,7 @@ export default function Navbar() {
               <a
                 key={link.id}
                 href={link.href}
-                className={`relative px-4 py-1.5 text-xs font-medium transition-all duration-200 rounded-full flex flex-col items-center ${
+                className={`relative px-4 py-1.5 text-[13px] font-medium transition-all duration-200 rounded-full flex flex-col items-center ${
                   isActive
                     ? "text-[#fbbf24]"
                     : "text-[#d1d5db] hover:text-white hover:bg-white/[0.06]"
